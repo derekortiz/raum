@@ -1,0 +1,11 @@
+li.projects {
+    list-style: none outside none;
+    float: left;
+    text-align: center;
+    width: 49.75%;
+    border-right: 1px solid #FFF;
+}
+
+.projects img {
+    width: 75%;
+}

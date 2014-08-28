@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RAUM Compact Furniture</title>
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+		<link href="lightbox.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/_dependent/greensock/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/_dependent/greensock/plugins/ScrollToPlugin.min.js"></script>
+		<script type="text/javascript" src="js/_dependent/jquery-1.11.0.min.js"></script>
+	  	<script type="text/javascript" src="js/_examples/modernizr.custom.min.js"></script>
+	  	<script type="text/javascript" src="js/_mobile/iscroll.js"></script>
+	  	<script type="text/javascript" src="js/jquery.scrollmagic.min.js"></script>
+	  	<script type="text/javascript" src="js/_examples/demo.js"></script>
+		<script type="text/javascript" src="js/lightbox.min.js"></script>
+	  	<script>
+	var controller;
+	$(document).ready(function($) {
+		// init controller
+		controller = new ScrollMagic();
+	});
+</script>
+	</head>
+	<body>
+			<div id="logo-container">
+				<div id="logo-animation">
+					<img id="r-counter" src="images/r-counter.png" alt="RAUM" />
+					<img id="a-counter" src="images/a-counter.png" alt="RAUM" />
+					<img id="u-counter" src="images/u-counter.png" alt="RAUM" />
+					<img id="m-counter" src="images/m-counter.png" alt="RAUM" />	
+				</div>	
+				<section class="raum-animation">
+					<img src="images/raum-logo.png" alt="RAUM" />
+					<p id="tagline">Furniture to your fitting.</p>
+					<div id="trigger1"></div>
+				</section>
+			</div>
+			<script>
+				$(document).ready(function($) {
+	    			var r = document.getElementById("r-counter");
+	    			var a = document.getElementById("a-counter");
+	    			var u = document.getElementById("u-counter");
+	    			var m = document.getElementById("m-counter");
+	    			var tagline = document.getElementById("tagline");
+	    			var timeline = new TimelineMax().add(TweenMax.from(r,100,{x:-100}));
+
+	    			var logoScene = new ScrollScene({
+	    				offset: 1,
+	    				duration: 1000,
+	    				triggerHook: "onEnter"
+	    			})
+	    			.setPin("#logo-container")
+	    			.addTo(controller)
+	    			.addTween(timeine); 			
+				});
+			</script>
+			<p>
+				 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec scelerisque sapien. Duis et est id nulla tempus gravida. Praesent dignissim velit massa, et aliquam urna facilisis a. Pellentesque vitae sagittis ex. Vestibulum rutrum, mi ut bibendum suscipit, ex ante elementum tellus, in elementum dui odio vitae mauris. Praesent blandit sapien nec risus feugiat, sed efficitur magna tempus. Donec imperdiet tincidunt ex. Vivamus non urna vulputate, maximus dui sit amet, pulvinar sem. Duis nunc metus, laoreet eu arcu id, scelerisque convallis odio. Sed non porttitor tellus, sit amet tincidunt sem.
+
+Vestibulum convallis pretium eros, ut convallis quam. Etiam lacus est, ullamcorper aliquet lacus vitae, aliquet pretium odio. Nulla viverra a nunc sit amet posuere. Cras commodo ornare ipsum quis fringilla. Aliquam cursus nibh mauris, eget semper dui faucibus ac. Fusce posuere lacus id arcu posuere, vitae dignissim dolor faucibus. Etiam vehicula porttitor leo eget molestie. Vivamus nisl urna, accumsan sit amet nisl sagittis, scelerisque molestie nisi. Quisque maximus vel neque ac sagittis. Etiam eu ligula sodales, luctus nibh sed, egestas dui. Pellentesque scelerisque sed neque ut congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec egestas, est ac pulvinar eleifend, nisl turpis congue purus, id auctor dolor erat ut turpis. Ut id augue lorem. In interdum tortor lorem, et suscipit nunc finibus nec. Fusce laoreet nulla viverra tempor maximus.
+
+Ut sit amet erat a turpis lacinia faucibus. Cras ex nunc, volutpat nec dignissim vel, pellentesque vel orci. Quisque leo orci, dignissim posuere facilisis vitae, auctor ac nibh. Nulla nisi nisi, ullamcorper at tincidunt sed, accumsan id sem. Etiam rhoncus eleifend enim, in hendrerit neque vestibulum at. Mauris vel tincidunt ipsum. Donec quis leo vel nisl venenatis tempus. Nam rhoncus hendrerit tincidunt. Pellentesque dapibus dolor risus, id rutrum libero faucibus sit amet. Donec ultrices dolor nec ante pharetra dapibus. Maecenas vestibulum id lacus non pharetra. Nam consectetur nulla eros, et malesuada leo pretium vel. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Nunc aliquet gravida venenatis. Fusce consequat purus quam, vehicula bibendum augue pellentesque in. Fusce at tempor dui. Vestibulum scelerisque odio interdum, placerat risus a, rhoncus magna. Duis tempus commodo molestie. Pellentesque eu neque sollicitudin, porttitor felis a, mollis urna. In nibh est, aliquam vel libero quis, malesuada consectetur lectus. Ut mattis fermentum est ac tristique. Maecenas eleifend erat non lacus vehicula ullamcorper. Vivamus consectetur tortor aliquet nisi varius imperdiet. Aenean posuere velit ac convallis porttitor. Mauris facilisis vel tellus a ornare. Suspendisse pulvinar tortor ut turpis elementum egestas. Etiam lacinia, leo nec bibendum ultricies, magna est auctor metus, in placerat magna leo non ante.
+
+In sit amet sapien in enim rutrum feugiat. Maecenas in consectetur tortor. Suspendisse potenti. Proin ac mauris viverra, accumsan orci lacinia, malesuada nisl. Duis faucibus fringilla sapien, et eleifend dui convallis a. Suspendisse vitae convallis odio, in tempus mauris. Nulla feugiat aliquet lacus, eget mattis magna ultricies vestibulum. Etiam placerat odio sed volutpat luctus. Morbi rutrum, augue eget dapibus ornare, justo ex euismod nisl, nec eleifend sapien nulla sed est. Suspendisse ultricies risus nec aliquet sagittis. Nulla non dapibus lacus. Mauris vel ipsum sodales, sagittis nulla sed, iaculis lectus. Cras ac augue non massa egestas sollicitudin. Duis ut orci sodales, ultrices lorem a, interdum risus. Duis volutpat nec libero sit amet pharetra.
+
+Sed tristique, elit et elementum tincidunt, magna metus tempor est, non finibus orci urna at justo. Proin enim erat, scelerisque et porttitor viverra, blandit a metus. Ut non cursus augue. Quisque nec eros leo. Sed dignissim a sem sit amet porttitor. Donec venenatis ullamcorper ornare. Donec id tincidunt nisi. Nullam non pellentesque ligula. Sed lobortis rhoncus consectetur. Pellentesque condimentum massa laoreet nunc congue, et bibendum mi pretium. Duis ullamcorper velit non odio finibus, id rutrum ante sollicitudin.
+
+Donec tristique nunc gravida enim rhoncus rhoncus. Nullam quis leo ac ligula lobortis feugiat. Aliquam molestie eget leo at mattis. Phasellus in velit eros. Praesent laoreet vehicula pellentesque. Aenean tortor enim, tempus quis finibus eget, vulputate in nisl. Duis id lacus dui.
+
+Integer malesuada porta metus, a porttitor odio pretium et. Donec nec augue quis dui eleifend pellentesque sit amet nec risus. Pellentesque sodales metus lorem, ut luctus lorem vestibulum nec. Fusce non scelerisque orci, vitae tempus enim. Aliquam pharetra auctor tortor, eget molestie lorem dignissim nec. Morbi vitae leo erat. Mauris ac odio tellus. Nam ut velit id lorem rhoncus mattis id faucibus mi. Cras eget suscipit est. Etiam sit amet nisl risus. Proin ac neque nulla. Nullam accumsan eu urna et consequat. Mauris a suscipit sapien. Vivamus tempor lacinia nisl eget fringilla. Aliquam tincidunt massa non magna posuere, ac tempor eros convallis. Proin ac pretium felis, sed sollicitudin ante.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin sodales arcu ut ornare pulvinar. Maecenas sodales luctus viverra. Etiam in mauris nec dui hendrerit convallis sit amet id sapien. Aliquam erat volutpat. Duis vitae convallis nisi. Duis iaculis ante magna, venenatis pharetra risus fringilla sit amet. Nam ultricies consequat rutrum.
+
+Integer condimentum dolor id nisi aliquam luctus. Pellentesque ac nisi lorem. Integer cursus, mauris vitae dictum pharetra, enim nisi vestibulum ligula, eget condimentum lectus odio ac augue. Curabitur tristique nibh a placerat iaculis. Vestibulum facilisis ligula rhoncus urna accumsan, at lobortis massa placerat. Nullam maximus vel neque vel tempor. Donec pretium sapien vel risus fringilla, non viverra dui convallis. Pellentesque sit amet est sit amet felis tempor dictum in vel ligula. Phasellus non mi mattis, laoreet enim in, condimentum magna.
+			</p>
+	</body>
+</html>
