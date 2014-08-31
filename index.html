@@ -35,6 +35,7 @@
 					<div id="trigger1"></div>
 				</section>
 			</div>
+
 			<script>
 				$(document).ready(function($) {
 	    			var r = document.getElementById("r-counter");
@@ -42,18 +43,73 @@
 	    			var u = document.getElementById("u-counter");
 	    			var m = document.getElementById("m-counter");
 	    			var tagline = document.getElementById("tagline");
-	    			var timeline = new TimelineMax().add(TweenMax.from(r,100,{x:-100}));
+	    			var timeline = new TimelineMax()
+	    				.add([TweenMax.from(r,4,{x:-200, opacity: 0}), 
+	    				      TweenMax.from(a,5,{y:200, opacity: 0}),
+	    				      TweenMax.from(u,6,{y:-200, opacity: 0}),
+	    				      TweenMax.from(m,7,{x:200, opacity: 0})
+	    				     ])
+	    				.add(TweenMax.from(tagline, 3, {opacity: 0 }));
 
 	    			var logoScene = new ScrollScene({
-	    				offset: 1,
-	    				duration: 1000,
-	    				triggerHook: "onEnter"
+	    				duration: 2000,
+	    				triggerHook: 0
 	    			})
-	    			.setPin("#logo-container")
+	    			.setTween(timeline)
 	    			.addTo(controller)
-	    			.addTween(timeine); 			
+	    			.setPin("#logo-container", {spacerClass:".logo-pin-spacer",
+	    				pushFollowers: true});
+	    		});
+			</script>
+
+			<div id="owners-container">
+				<div id="text-decoration-left"><p>Christina Schneider</p></div>
+				<div id="text-decoration-right"><p>Klause Mueller<p></div>
+			</div>
+
+			<script>
+				$(document).ready(function($) {
+	    			var ownerTimeline = new TimelineMax()
+	    				.add([TweenMax.from("#text-decoration-left",500,{width:0}),
+	    					  TweenMax.from("#text-decoration-right",500,{width:0})
+	    					])
+	    				.add([TweenMax.from("#text-decoration-left p",500,{opacity:0}),
+	    					  TweenMax.from("#text-decoration-right p",500,{opacity:0})
+	    					])
+
+	    			var ownerScene = new ScrollScene({
+	    				triggerElement: "#owners-container",
+	    				duration: 1000,
+	    				triggerHook: 0
+	    			})
+	    			.setTween(ownerTimeline)
+	    			.addTo(controller)
+	    			.setPin("#owners-container", {spacerClass: "owners-pin-spacer"}); 			
 				});
 			</script>
+
+			<div id="meet-container">
+				<div class="meet-center">
+					<img src="images/meet.png" alt="Meet RAUM" />
+				</div>
+				<div class="meet-center">
+					<div class="meet-line-container"><div id="left-line-meet"></div></div>
+					<div id="diamonds">
+						<div class="box"></div>
+						<div id="hollow-box" class="box"></div>
+						<div class="box"></div>
+					</div>
+					<div class="meet-line-container"><div id="right-line-meet"></div></div>
+				</div>
+				<p>From a spatially challenged apartment in Brooklyn
+Klaus Mueller and Christina Schneider sought to
+revolutionize the way we look at space. <br/><br/>
+They brought smart modular furniture to the forefront
+of urban living. Their furniture’s modern design
+compliments any cramped space. When your furniture
+limits your space get Raum furniture to your fitting.
+				</p>
+			</div>
 			<p>
 				 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec scelerisque sapien. Duis et est id nulla tempus gravida. Praesent dignissim velit massa, et aliquam urna facilisis a. Pellentesque vitae sagittis ex. Vestibulum rutrum, mi ut bibendum suscipit, ex ante elementum tellus, in elementum dui odio vitae mauris. Praesent blandit sapien nec risus feugiat, sed efficitur magna tempus. Donec imperdiet tincidunt ex. Vivamus non urna vulputate, maximus dui sit amet, pulvinar sem. Duis nunc metus, laoreet eu arcu id, scelerisque convallis odio. Sed non porttitor tellus, sit amet tincidunt sem.
 

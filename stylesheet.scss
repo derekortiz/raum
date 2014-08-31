@@ -7,7 +7,13 @@ body {
     font-family: DIN,helvetica,arial,sans-serif;
     font-size: 0.85em;
     line-height: 1.4em;
-    background: none repeat scroll 0% 0% #f5f1e8;
+    background:  url(images/owners.jpg) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    background-color: #000;
 }
 
 /*------------ logo animated ---------------*/
@@ -27,6 +33,9 @@ body {
 .raum-animation img {
 }
 
+.logo-pin-spacer {
+    @extend .owner-background;
+}
 
 #logo-animation {
     text-align: center;
@@ -78,6 +87,123 @@ img#counterbanner {
 #trigger1 { height: 3em; }
 
 /*------------ body ---------------*/
+.owner-background {
+    background: url(images/owners.jpg) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    background-color: #000;
+    z-index:-1;
+}
 
+#owners-container {
+    width:100%;
+    height:1098px;
+    max-height: 1098px;
+    background: transparent;
+
+
+    .owner-text {
+        text-transform:uppercase;
+        font-weight:bold;
+        letter-spacing: 1px;
+        font-size: 15px;
+        color: rgb(65,65,66);
+        line-height: .3;
+    }
+
+    #text-decoration-left {
+        border-bottom: 1px solid rgb(65,65,66);
+        position: relative;
+        width: 300px;
+        float: right;
+        margin-right: 70%;
+        margin-top: 66px;
+        text-align: right;
+        p {
+            @extend .owner-text;
+            text-align: left;
+        }
+    }
+    #text-decoration-right {
+        position:relative;
+        border-bottom: 1px solid rgb(65,65,66);
+        width: 300px;
+        float: left;
+        margin-left: 62.5%;
+        margin-top: 100px;
+        text-align:left;
+        p {
+            @extend .owner-text;
+            text-align: right;
+        }
+    }
+}
+
+
+/*------------- meet ----------------*/
+
+div#meet-container {
+    width:100%;
+    height:660px;
+    background-color: rgb(245,240,232);
+    text-align: center;
+
+    img {
+        margin: 70px 0 30px 0; 
+    }
+
+    p {
+        width: 528px;
+        text-align: left;
+        padding-top: 70px;
+        margin: 0 auto;
+        font-family: Georgia;
+        font-size: 21px;
+        color:rgb(141,128,126);
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+    .meet-center {
+        text-align: center;
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    #diamonds {
+        margin: 0 auto;
+        width: 44px;
+        float: left;
+        padding-right: 25px;
+        padding-left: 25px;
+        .box {
+            width: 10px;
+            height: 10px;
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+            transform: rotate(45deg);
+            background-color: rgb(96,80,80);
+            float: left;
+            margin: 2px;
+            margin-top: 7px;
+        }
+        #hollow-box {
+            width: 8px;
+            height: 8px;
+            border: 2px solid rgb(96, 80, 80);
+            background-color: rgb(245,240,232);
+            margin-top: 6px;
+        }
+    }
+
+    .meet-line-container {
+        float:left;
+        width: 300px;
+        border-bottom: 1px solid rgba(96, 80, 80, .5);
+        margin-top: 12px;
+    }
+}
 
 /*------------ footer ---------------*/
