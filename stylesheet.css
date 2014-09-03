@@ -13,6 +13,14 @@ body {
   position: relative;
   background-color: #000; }
 
+/*---------- class templates ---------------*/
+.white-text, #maria p {
+  color: #fbfbfb;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 40px; }
+
 /*------------ logo animated ---------------*/
 #logo-container {
   width: 100%;
@@ -161,5 +169,102 @@ div#meet-container {
     width: 300px;
     border-bottom: 1px solid rgba(96, 80, 80, 0.5);
     margin-top: 12px; }
+
+/*------------ subway ---------------*/
+#subway {
+  height: 660px;
+  width: 100%;
+  background-color: #776a6a;
+  display: table; }
+  #subway p {
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #fbfbfb;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 40px;
+    font-size: 30px; }
+
+/*------------ Maria ----------------*/
+#maria {
+  background: url(images/maria.jpg) no-repeat top center;
+  height: 700px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  #maria p#home-text {
+    margin: 0;
+    padding-top: 40px;
+    font-size: 54px;
+    width: 400px;
+    line-height: 0.9; }
+  #maria p#home-sub {
+    letter-spacing: 0; }
+
+/*------------ tweets ---------------*/
+.twitter-block {
+  height: 800px;
+  width: 100%;
+  background-color: #776a6a;
+  padding: 100px 0 0 100px; }
+  .twitter-block .tweet-container {
+    width: 100%; }
+    .twitter-block .tweet-container img {
+      float: left; }
+    .twitter-block .tweet-container .tweet-box-container {
+      float: left; }
+      .twitter-block .tweet-container .tweet-box-container .tail {
+        float: left;
+        width: 0;
+        height: 0;
+        margin: -8px 0 0 10px;
+        border-style: solid;
+        border-width: 0 0 15px 22px;
+        border-color: transparent transparent #605050; }
+      .twitter-block .tweet-container .tweet-box-container .outer-tweet {
+        float: left;
+        width: 300px;
+        height: 300px;
+        background-color: #605050;
+        margin-top: -22px;
+        padding: 0;
+        text-align: center; }
+        .twitter-block .tweet-container .tweet-box-container .outer-tweet .inner-tweet {
+          width: 90%;
+          height: 90%;
+          background-color: #fbfbfb;
+          text-align: left;
+          margin: 5% 0 0 5%; }
+  .twitter-block .tweet-container-right {
+    width: 100%; }
+    .twitter-block .tweet-container-right img {
+      float: right; }
+    .twitter-block .tweet-container-right .tweet-box-container {
+      float: right; }
+      .twitter-block .tweet-container-right .tweet-box-container .tail {
+        float: right;
+        width: 0;
+        height: 0;
+        margin: -8px 0 0 10px;
+        border-style: solid;
+        border-width: 0 0 15px 22px;
+        border-color: transparent transparent #605050; }
+      .twitter-block .tweet-container-right .tweet-box-container .outer-tweet {
+        float: right;
+        width: 300px;
+        height: 300px;
+        background-color: #605050;
+        margin-top: -22px;
+        padding: 0;
+        text-align: center; }
+        .twitter-block .tweet-container-right .tweet-box-container .outer-tweet .inner-tweet {
+          width: 90%;
+          height: 90%;
+          background-color: #fbfbfb;
+          text-align: left;
+          margin: 5% 0 0 5%; }
 
 /*------------ footer ---------------*/

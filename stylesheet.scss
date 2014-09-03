@@ -16,6 +16,15 @@ body {
     background-color: #000;
 }
 
+/*---------- class templates ---------------*/
+.white-text {
+    color: rgb(251,251,251);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 40px;
+}
+
 /*------------ logo animated ---------------*/
 
 #logo-container {
@@ -205,5 +214,150 @@ div#meet-container {
         margin-top: 12px;
     }
 }
+
+
+/*------------ subway ---------------*/
+
+#subway {
+    height: 660px;
+    width: 100%;
+    background-color: rgb(119,106,106);
+    display: table;
+
+    p {
+        display: table-cell;
+        vertical-align: middle;
+        text-transform: uppercase;
+        color: rgb(251,251,251);
+        line-height: 1;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-left: 40px;
+        font-size:30px;
+    }
+}
+
+/*------------ Maria ----------------*/
+
+#maria {
+    background: url(images/maria.jpg) no-repeat top center;
+    height:700px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    p {
+        @extend .white-text;
+    }
+
+    p#home-text{
+        margin: 0;
+        padding-top: 40px;
+        font-size: 54px;
+        width: 400px;
+        line-height: 0.9;
+
+
+    }
+
+    p#home-sub{
+        letter-spacing: 0;
+    }
+}
+
+/*------------ tweets ---------------*/
+
+.twitter-block {
+    height: 800px;
+    width: 100%;
+    background-color: rgb(119,106,106);
+    padding: 100px 0 0 100px;
+
+    .tweet-container {
+        width: 100%;
+
+        img {
+            float:left;
+        }
+
+        .tweet-box-container {
+            float:left;
+
+            .tail {
+                float:left;
+                width: 0;
+                height: 0;
+                margin: -8px 0 0 10px;
+                border-style: solid;
+                border-width: 0 0 15px 22px;
+                border-color: transparent transparent rgb(96,80,80);
+            }
+
+            .outer-tweet {
+                float:left;
+                width:300px;
+                height:300px;
+                background-color: rgb(96,80,80);
+                margin-top: -22px;
+                padding:0;
+                text-align: center;
+
+                .inner-tweet{
+                    width:90%;
+                    height:90%; 
+                    background-color: rgb(251,251,251);
+                    text-align: left;
+                    margin: 5% 0 0 5%;
+
+                }
+            }
+        }
+    }
+
+    .tweet-container-right {
+        width:100%;
+
+        img {
+            float:right;
+        }
+
+        .tweet-box-container {
+            float:right;
+
+            .tail {
+                float:right;
+                width: 0;
+                height: 0;
+                margin: -8px 0 0 10px;
+                border-style: solid;
+                border-width: 0 0 15px 22px;
+                border-color: transparent transparent rgb(96,80,80);
+            }
+
+            .outer-tweet {
+                float:right;
+                width:300px;
+                height:300px;
+                background-color: rgb(96,80,80);
+                margin-top: -22px;
+                padding:0;
+                text-align: center;
+
+                .inner-tweet{
+                    width:90%;
+                    height:90%; 
+                    background-color: rgb(251,251,251);
+                    text-align: left;
+                    margin: 5% 0 0 5%;
+
+                }
+            }
+        }
+    }
+}
+
+
+
 
 /*------------ footer ---------------*/
