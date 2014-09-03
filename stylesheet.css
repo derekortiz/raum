@@ -14,7 +14,7 @@ body {
   background-color: #000; }
 
 /*---------- class templates ---------------*/
-.white-text, #maria p {
+.white-text, #maria p, #kevin p {
   color: #fbfbfb;
   font-weight: bold;
   text-transform: uppercase;
@@ -170,13 +170,13 @@ div#meet-container {
     border-bottom: 1px solid rgba(96, 80, 80, 0.5);
     margin-top: 12px; }
 
-/*------------ subway ---------------*/
-#subway {
+/*------------ subway/cana text banners ---------------*/
+.text-banner {
   height: 660px;
   width: 100%;
   background-color: #776a6a;
   display: table; }
-  #subway p {
+  .text-banner p {
     display: table-cell;
     vertical-align: middle;
     text-transform: uppercase;
@@ -191,6 +191,7 @@ div#meet-container {
 #maria {
   background: url(images/maria.jpg) no-repeat top center;
   height: 700px;
+  width: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -208,10 +209,11 @@ div#meet-container {
 .twitter-block {
   height: 800px;
   width: 100%;
-  background-color: #776a6a;
-  padding: 100px 0 0 100px; }
+  background-color: #776a6a; }
   .twitter-block .tweet-container {
-    width: 100%; }
+    width: 100%;
+    float: left;
+    margin: 100px 0 0 100px; }
     .twitter-block .tweet-container img {
       float: left; }
     .twitter-block .tweet-container .tweet-box-container {
@@ -239,20 +241,29 @@ div#meet-container {
           text-align: left;
           margin: 5% 0 0 5%; }
   .twitter-block .tweet-container-right {
-    width: 100%; }
+    width: 100%;
+    float: right;
+    margin: 100px 100px 0; }
     .twitter-block .tweet-container-right img {
+      float: right;
+      /*--- flip image ---*/
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH"; }
+    .twitter-block .tweet-container-right .tweet-box-container-right {
       float: right; }
-    .twitter-block .tweet-container-right .tweet-box-container {
-      float: right; }
-      .twitter-block .tweet-container-right .tweet-box-container .tail {
+      .twitter-block .tweet-container-right .tweet-box-container-right .tail-right {
         float: right;
         width: 0;
         height: 0;
-        margin: -8px 0 0 10px;
+        margin: -8px 10px 0 0;
         border-style: solid;
-        border-width: 0 0 15px 22px;
+        border-width: 0 22px 15px 0;
         border-color: transparent transparent #605050; }
-      .twitter-block .tweet-container-right .tweet-box-container .outer-tweet {
+      .twitter-block .tweet-container-right .tweet-box-container-right .outer-tweet-right {
         float: right;
         width: 300px;
         height: 300px;
@@ -260,11 +271,32 @@ div#meet-container {
         margin-top: -22px;
         padding: 0;
         text-align: center; }
-        .twitter-block .tweet-container-right .tweet-box-container .outer-tweet .inner-tweet {
+        .twitter-block .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right {
           width: 90%;
           height: 90%;
           background-color: #fbfbfb;
           text-align: left;
           margin: 5% 0 0 5%; }
+
+/*----------- kevin ---------------*/
+#kevin {
+  background: url(images/kevin.jpg) no-repeat top center;
+  height: 700px;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  #kevin p {
+    float: right;
+    width: 100%; }
+  #kevin p#kevin-text {
+    margin: 0;
+    padding-top: 40px;
+    font-size: 54px;
+    width: 400px;
+    line-height: 0.9; }
+  #kevin p#kevin-sub {
+    letter-spacing: 0; }
 
 /*------------ footer ---------------*/

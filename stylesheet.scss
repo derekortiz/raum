@@ -216,9 +216,9 @@ div#meet-container {
 }
 
 
-/*------------ subway ---------------*/
+/*------------ subway/cana text banners ---------------*/
 
-#subway {
+.text-banner {
     height: 660px;
     width: 100%;
     background-color: rgb(119,106,106);
@@ -242,6 +242,7 @@ div#meet-container {
 #maria {
     background: url(images/maria.jpg) no-repeat top center;
     height:700px;
+    width: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -272,10 +273,11 @@ div#meet-container {
     height: 800px;
     width: 100%;
     background-color: rgb(119,106,106);
-    padding: 100px 0 0 100px;
 
     .tweet-container {
         width: 100%;
+        float:left;
+        margin: 100px 0 0 100px;
 
         img {
             float:left;
@@ -317,25 +319,35 @@ div#meet-container {
 
     .tweet-container-right {
         width:100%;
+        float:right;
+        margin: 100px 100px 0;
 
         img {
             float:right;
+            /*--- flip image ---*/
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
         }
 
-        .tweet-box-container {
+        .tweet-box-container-right {
             float:right;
 
-            .tail {
+
+            .tail-right {
                 float:right;
                 width: 0;
                 height: 0;
-                margin: -8px 0 0 10px;
+                margin: -8px 10px 0 0;
                 border-style: solid;
-                border-width: 0 0 15px 22px;
+                border-width: 0 22px 15px 0;
                 border-color: transparent transparent rgb(96,80,80);
             }
 
-            .outer-tweet {
+            .outer-tweet-right {
                 float:right;
                 width:300px;
                 height:300px;
@@ -344,7 +356,7 @@ div#meet-container {
                 padding:0;
                 text-align: center;
 
-                .inner-tweet{
+                .inner-tweet-right{
                     width:90%;
                     height:90%; 
                     background-color: rgb(251,251,251);
@@ -354,6 +366,36 @@ div#meet-container {
                 }
             }
         }
+    }
+}
+
+/*----------- kevin ---------------*/
+
+#kevin {
+    background: url(images/kevin.jpg) no-repeat top center;
+    height:700px;
+    width:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    p {
+        @extend .white-text;
+        float: right;
+        width:100%;
+    }
+
+    p#kevin-text{
+        margin: 0;
+        padding-top: 40px;
+        font-size: 54px;
+        width: 400px;
+        line-height: 0.9;
+    }
+
+    p#kevin-sub{
+        letter-spacing: 0;
     }
 }
 
