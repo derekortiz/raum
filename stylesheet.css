@@ -5,13 +5,8 @@ body {
   font-family: DIN,helvetica,arial,sans-serif;
   font-size: 0.85em;
   line-height: 1.4em;
-  background: url(images/owners.jpg) no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: relative;
-  background-color: #000; }
+  background-color: #605050; }
 
 /*---------- class templates ---------------*/
 .white-text, #maria-container #maria p, #kevin p {
@@ -74,22 +69,20 @@ img#counterbanner {
 #trigger1 {
   height: 3em; }
 
-/*------------ body ---------------*/
+/*------------ owners ---------------*/
 .owner-background, .logo-pin-spacer {
-  background: url(images/owners.jpg) no-repeat top center fixed;
+  background: url(images/owners.jpg) no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  background-color: #000;
   z-index: -1; }
 
 #owners-container {
   width: 100%;
-  height: 1098px;
-  max-height: 1098px;
-  background: transparent; }
+  height: 0;
+  padding-bottom: 59%; }
   #owners-container .owner-text, #owners-container #text-decoration-left p, #owners-container #text-decoration-right p {
     text-transform: uppercase;
     font-weight: bold;
@@ -215,7 +208,7 @@ div#meet-container {
   width: 100%;
   background-color: #776a6a; }
   .twitter-block .tweet-container {
-    width: 100%;
+    width: 491px;
     float: left;
     margin: 100px 0 0 100px; }
     .twitter-block .tweet-container img {
@@ -245,7 +238,7 @@ div#meet-container {
           text-align: left;
           margin: 5% 0 0 5%; }
   .twitter-block .tweet-container-right {
-    width: 100%;
+    width: 491px;
     float: right;
     margin: 100px 100px 0; }
     .twitter-block .tweet-container-right img {
