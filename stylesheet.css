@@ -14,7 +14,7 @@ body {
   background-color: #000; }
 
 /*---------- class templates ---------------*/
-.white-text, #maria p, #kevin p {
+.white-text, #maria-container #maria p, #kevin p {
   color: #fbfbfb;
   font-weight: bold;
   text-transform: uppercase;
@@ -188,22 +188,26 @@ div#meet-container {
     font-size: 30px; }
 
 /*------------ Maria ----------------*/
-#maria {
-  background: url(images/maria.jpg) no-repeat top center;
-  height: 700px;
+#maria-container {
   width: 100%;
+  padding-bottom: 75%;
+  height: 0;
+  background: url(images/maria.jpg) no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-  #maria p#home-text {
-    margin: 0;
-    padding-top: 40px;
-    font-size: 54px;
-    width: 400px;
-    line-height: 0.9; }
-  #maria p#home-sub {
-    letter-spacing: 0; }
+  #maria-container #maria {
+    height: 100%;
+    width: 100%; }
+    #maria-container #maria p#home-text {
+      margin: 0;
+      padding-top: 40px;
+      font-size: 54px;
+      width: 400px;
+      line-height: 0.9; }
+    #maria-container #maria p#home-sub {
+      letter-spacing: 0; }
 
 /*------------ tweets ---------------*/
 .twitter-block {

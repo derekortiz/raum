@@ -239,34 +239,37 @@ div#meet-container {
 
 /*------------ Maria ----------------*/
 
-#maria {
-    background: url(images/maria.jpg) no-repeat top center;
-    height:700px;
+#maria-container {
     width: 100%;
+    padding-bottom:75%;
+    height:0;
+    background: url(images/maria.jpg) no-repeat top center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    #maria {
+        height:100%;
+        width:100%;
+        p {
+            @extend .white-text;
+        }
 
-    p {
-        @extend .white-text;
-    }
-
-    p#home-text{
-        margin: 0;
-        padding-top: 40px;
-        font-size: 54px;
-        width: 400px;
-        line-height: 0.9;
+        p#home-text{
+            margin: 0;
+            padding-top: 40px;
+            font-size: 54px;
+            width: 400px;
+            line-height: 0.9;
 
 
-    }
+        }
 
-    p#home-sub{
-        letter-spacing: 0;
+        p#home-sub{
+            letter-spacing: 0;
+        }
     }
 }
-
 /*------------ tweets ---------------*/
 
 .twitter-block {
