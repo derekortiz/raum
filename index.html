@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>RAUM Compact Furniture</title>
-		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 		<link href="stylesheet.css" type="text/css" rel="stylesheet" />
 		<link href="lightbox.css" rel="stylesheet" />
 		<script type="text/javascript" src="js/_dependent/greensock/TweenMax.min.js"></script>
@@ -22,6 +22,7 @@
 </script>
 	</head>
 	<body>
+		<div id="animation">
 			<div id="logo-container">
 				<div id="logo-animation">
 					<img id="r-counter" src="images/r-counter.png" alt="RAUM" />
@@ -29,85 +30,38 @@
 					<img id="u-counter" src="images/u-counter.png" alt="RAUM" />
 					<img id="m-counter" src="images/m-counter.png" alt="RAUM" />	
 				</div>	
-				<section class="raum-animation">
+				<div class="raum-animation">
 					<img src="images/raum-logo.png" alt="RAUM" />
 					<p id="tagline">Furniture to your fitting.</p>
 					<div id="trigger1"></div>
-				</section>
+				</div>
 			</div>
-
-			<script>
-				$(document).ready(function($) {
-	    			var r = document.getElementById("r-counter");
-	    			var a = document.getElementById("a-counter");
-	    			var u = document.getElementById("u-counter");
-	    			var m = document.getElementById("m-counter");
-	    			var tagline = document.getElementById("tagline");
-	    			var timeline = new TimelineMax()
-	    				.add([TweenMax.from(r,4,{x:-200, opacity: 0}), 
-	    				      TweenMax.from(a,5,{y:200, opacity: 0}),
-	    				      TweenMax.from(u,6,{y:-200, opacity: 0}),
-	    				      TweenMax.from(m,7,{x:200, opacity: 0})
-	    				     ])
-	    				.add(TweenMax.from(tagline, 3, {opacity: 0 }));
-
-	    			var logoScene = new ScrollScene({
-	    				duration: 2000,
-	    				triggerHook: 0
-	    			})
-	    			.setTween(timeline)
-	    			.addTo(controller)
-	    			.setPin("#logo-container", {spacerClass:".logo-pin-spacer",
-	    				pushFollowers: true});
-	    		});
-			</script>
 
 			<div id="owners-container" class="owner-background">
 				<div id="text-decoration-left"><p>Christina Schneider</p></div>
 				<div id="text-decoration-right"><p>Klause Mueller<p></div>
 			</div>
 
-			<script>
-				$(document).ready(function($) {
-	    			var ownerTimeline = new TimelineMax()
-	    				.add([TweenMax.from("#text-decoration-left",500,{width:0}),
-	    					  TweenMax.from("#text-decoration-right",500,{width:0})
-	    					])
-	    				.add([TweenMax.from("#text-decoration-left p",500,{opacity:0}),
-	    					  TweenMax.from("#text-decoration-right p",500,{opacity:0})
-	    					])
-
-	    			var ownerScene = new ScrollScene({
-	    				triggerElement: "#owners-container",
-	    				duration: 1000,
-	    				triggerHook: 0
-	    			})
-	    			.setTween(ownerTimeline)
-	    			.addTo(controller)
-	    			.setPin("#owners-container", {spacerClass: "owners-pin-spacer"}); 			
-				});
-			</script>
-
 			<div id="meet-container">
 				<div class="meet-center">
 					<img src="images/meet.png" alt="Meet RAUM" />
 				</div>
 				<div class="meet-center">
-					<div class="meet-line-container"><div id="left-line-meet"></div></div>
+					<div class="meet-line-container"><div id="meet-line-left"></div></div>
 					<div id="diamonds">
-						<div class="box"></div>
 						<div id="hollow-box" class="box"></div>
-						<div class="box"></div>
+						<div id="d1" class="box"></div>
+						<div id="d3" class="box"></div>
 					</div>
-					<div class="meet-line-container"><div id="right-line-meet"></div></div>
+					<div class="meet-line-container"><div id="meet-line-right"></div></div>
 				</div>
 				<p>From a spatially challenged apartment in Brooklyn
-Klaus Mueller and Christina Schneider sought to
-revolutionize the way we look at space. <br/><br/>
-They brought smart modular furniture to the forefront
-of urban living. Their furniture’s modern design
-compliments any cramped space. When your furniture
-limits your space get Raum furniture to your fitting.
+	Klaus Mueller and Christina Schneider sought to
+	revolutionize the way we look at space. <br/><br/>
+	They brought smart modular furniture to the forefront
+	of urban living. Their furniture’s modern design
+	compliments any cramped space. When your furniture
+	limits your space get Raum furniture to your fitting.
 				</p>
 			</div> <!-- end meet containter -->
 
@@ -126,19 +80,20 @@ limits your space get Raum furniture to your fitting.
 				</div>
 			</div>
 
-			<section class="twitter-block">
+			<div id="tweet-one" class="twitter-block">
 				<div class="tweet-container">
-					<img src="images/twitter-logo.png" alt="twitter bird"/>
+					<img src="images/twitter-logo.png" alt="twitter bird" />
 					<div class='tweet-box-container'>
 						<div class="tail"></div>
 						<div class="outer-tweet">
 							<div class="inner-tweet">
 								<blockquote class="twitter-tweet" lang="en"><p>Finishing a nine hour <a href="https://twitter.com/ace_enders">@ace_enders</a> music marathon in honor of my favorite musician. You&#39;re the greatest ace, happy birthday!</p>&mdash; Derek Ortiz (@Derek_Ortiz) <a href="https://twitter.com/Derek_Ortiz/status/60521974857859072">April 20, 2011</a></blockquote>
-								<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+								<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				            </div>
 						</div>
 					</div>
 				</div>
+
 
 				<div class="tweet-container-right">
 					<img src="images/twitter-logo.png" alt="twitter bird"/>
@@ -148,21 +103,20 @@ limits your space get Raum furniture to your fitting.
 							<div class="inner-tweet-right"></div>
 						</div>
 					</div>
-
 				</div>
-			</section>
-			
-			<div id='cans' class="text-banner">
-				<p>You put up with the subway during rush hour</p>
-			</div>
+			</div><!-- end tweet-one -->
+
 
 			<div id="kevin">
 				<p id="kevin-text">
 					Show your friends your loft is craft not domestic.
 				</p>
-				<p id="kevin-text">
+				<p id="kevin-sub">
 					Furniture to your fitting.
 				</p>
 			</div>
+
+		</div><!-- end animation -->
+		<script type="text/javascript" src="raum.js"></script>
 	</body>
 </html>
