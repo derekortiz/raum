@@ -22,6 +22,7 @@ $(document).ready(function($) {
 			.add([TweenMax.from("#text-decoration-left p",500,{opacity:0}),
 				  TweenMax.from("#text-decoration-right p",500,{opacity:0})
 				])
+			.set("#owners-container", {css: {zIndex: 1}})
 
 			// meet tweens
 			.add(TweenMax.to("#meet-container",500, {transform: "translateY(0)"}))
@@ -32,6 +33,7 @@ $(document).ready(function($) {
 				  TweenMax.from("#meet-line-right", 500, {width: 0})
 				])
 			.add(TweenMax.from("#meet-container p", 500, {opacity: 0}))
+			.set("#meet-container", {css: {zIndex: 2}})
 			
 			// subway tweens paired with maria
 			.add([TweenMax.to("#subway",1000, {transform: "translateY(0)"}),
@@ -43,26 +45,37 @@ $(document).ready(function($) {
 				  TweenMax.from("#tweet-one div div div div", 1,{width:300})
 			])
 			.add(TweenMax.to("#subway",1000, {transform: "translateY(-100%)"}))
-
+			.set("#maria-container", {css: {zIndex: 3}})
 
 			// maria tweens
 
-			// tweet tweens
+			// tweet one tweens
 			.add(TweenMax.to("#tweet-one",1000, {transform: "translateY(0)"}))
 			.add(TweenMax.from("#tweet-one div.tweet-container", 500, {marginLeft: -500, ease: Back.easeOut}))
 			//.add(TweenMax.from("#tweet-one div div div div", 500,{width:50, height: 50}))
 			.add(TweenMax.from("#tweet-one div.tweet-container-right", 500, {marginRight: -500, ease: Back.easeOut}))
+			.set("#tweet-one", {css: {zIndex: 4}})
 
 			// cans tweens
-			.add(TweenMax.to("#cans", 1000, {transform: "translateY(0)"}))
+			.add([TweenMax.to("#cans", 1000, {transform: "translateY(0)"}),
+				  TweenMax.to("#kevin", 1000, {transform: "translateY(660px)"})
+				])
 			.add([TweenMax.to("#cans p", 1000, {fontSize: "120px"}),
 				  TweenMax.to("#cans p", 1000, {letterSpacing: "-18px"}),
 				  TweenMax.to("#cans p", 1000, {lineHeight: "87px"})
 				])
+			.set("#cans", {css: {zIndex: 5}})
 
 			// kevin tweens
-			.add(TweenMax.to("#kevin",1000, {transform: "translateY(0)"}));
+			.add(TweenMax.to("#kevin",1000, {transform: "translateY(0)"}))
+			.set("#kevin", {css: {zIndex: 6}})
 
+			//tweet two tweens
+			.add(TweenMax.to("#tweet-two",1000, {transform: "translateY(0)"}))
+			.add(TweenMax.from("#tweet-two div.tweet-container", 500, {marginLeft: -500, ease: Back.easeOut}))
+			//.add(TweenMax.from("#tweet-one div div div div", 500,{width:50, height: 50}))
+			.add(TweenMax.from("#tweet-two div.tweet-container-right", 500, {marginRight: -500, ease: Back.easeOut}));
+			
 
 		var scrollScene = new ScrollScene({
 			duration: 10000,
