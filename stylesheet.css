@@ -343,7 +343,7 @@ iframe#twitter-widget-0 {
 /*----------- kevin ---------------*/
 #kevin {
   background: url(images/kevin.jpg) no-repeat top center;
-  height: 700px;
+  height: 800px;
   width: 100%;
   z-index: 6;
   -webkit-background-size: cover;
@@ -352,7 +352,7 @@ iframe#twitter-widget-0 {
   background-size: cover;
   top: 0;
   position: absolute;
-  transform: translateY(660px); }
+  transform: translateY(800px); }
   #kevin div {
     float: right;
     width: 50%;
