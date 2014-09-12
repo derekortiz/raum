@@ -5,5 +5,4 @@
 - kevin text slide slides out off to the right, if possible. 
 - Fix fill in letters: M/A, IE missalign
 - Navigation buttons on the side 
-- "Meet Raum" Replace with real text. DIN Condensed 
 - Optimize Images

@@ -209,7 +209,6 @@ div#meet-container {
     p {
         width: 528px;
         text-align: left;
-        font-family: DINCond;
         padding-top: 70px;
         margin: 0 auto;
         font-family: Georgia;
@@ -396,8 +395,8 @@ div#meet-container {
                 float:left;
                 overflow:hidden;
                 min-height: 50px;
-                min-width: 50px;
-                max-width: 300px;
+                width: 300px;
+                height:auto;
                 background-color: rgb(96,80,80);
                 margin-top: -22px;
                 text-align: center;
@@ -444,8 +443,7 @@ div#meet-container {
             .outer-tweet-right {
                 float:right;
                 min-height: 50px;
-                min-width: 50px;
-                max-width: 300px;
+                width: 300px;
                 background-color: rgb(96,80,80);
                 margin-top: -22px;
                 padding:0;
@@ -475,6 +473,7 @@ div#meet-container {
     background: url(images/kevin.jpg) no-repeat top center;
     height:800px;
     width:100%;
+    overflow:hidden;
     z-index: 23;
     -webkit-background-size: cover;
     -moz-background-size: cover;
