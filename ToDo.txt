@@ -6,3 +6,7 @@
 - Fix fill in letters: M/A, IE missalign
 - Navigation buttons on the side 
 - Optimize Images
+
+For later:
+-divide into scroll scenes for easier navigation
+-cache reused tags for performance
