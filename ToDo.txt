@@ -1,0 +1,9 @@
+- Twitter growth 
+- Twitter cutoff in shorter screens vertically?
+- Smoother twitter transition (one swipe for the whole motion of when the bird comes in) 
+- Second growth slide same height as Kevin image? 
+- kevin text slide slides out off to the right, if possible. 
+- Fix fill in letters: M/A, IE missalign
+- Navigation buttons on the side 
+- "Meet Raum" Replace with real text. DIN Condensed 
+- Optimize Images
