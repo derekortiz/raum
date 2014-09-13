@@ -1,19 +1,43 @@
 $(document).ready(function($) {
 	// init controller
 	controller.scrollTo(function (pos) {
-		TweenMax.to(window, 1, {scrollTo: {y: pos}});
+		TweenMax.to(window, 2, {scrollTo: {y: pos}});
 	});
 	
-	var navMeet   = $("#nav-meet"),
-	    navSubway = $("#nav-subway");
-	var navMeetSpan   = $("#nav-meet span"),
-	    navSubwaySpan = $("#nav-subway span");
+	var navHome   = $("#nav-home"),
+		navMeet   = $("#nav-meet"),
+	    navSubway = $("#nav-subway"),
+	    navTweet1 = $("#nav-tweet-one"),
+	    navCraft  = $("#nav-craft"),
+	    navTweet2 = $("#nav-tweet-two");
+
+	var navHomeSpan   = $("#nav-home span"),
+		navMeetSpan   = $("#nav-meet span"),
+	    navSubwaySpan = $("#nav-subway span")
+	    navTweet1Span = $("#nav-tweet-one span"),
+	    navCraftSpan  = $("#nav-craft span"),
+	    navTweet2Span = $("#nav-tweet-two span");
 
 	// navigation tweens
-	var tweenSpanMeet = TweenMax.to(navMeetSpan, .25,{display:"block", opacity:1, paused:true}),
-	    tweenSpanSubway = TweenMax.to(navSubwaySpan, .25,{display:"block", opacity:1, paused:true});
+	var tweenSpanHome   = TweenMax.to(navHomeSpan, .25,{display:"block", opacity:1, paused:true}),
+		tweenSpanMeet   = TweenMax.to(navMeetSpan, .25,{display:"block", opacity:1, paused:true}),
+	    tweenSpanSubway = TweenMax.to(navSubwaySpan, .25,{display:"block", opacity:1, paused:true}),
+	    tweenSpanTweet1 = TweenMax.to(navTweet1Span, .25,{display:"block", opacity:1, paused:true}),
+	    tweenSpanCraft  = TweenMax.to(navCraftSpan, .25,{display:"block", opacity:1, paused:true}),
+	    tweenSpanTweet2 = TweenMax.to(navTweet2Span, .25,{display:"block", opacity:1, paused:true});
 
+    // home nav
+	$(navHome).hover(function() {
+		tweenSpanHome.play();
+	},
+	function() {
+		tweenSpanHome.reverse();
+	});
+	$(navHome).click(function() {
+		controller.scrollTo(0);
+	});
 
+	// meet nav
 	$(navMeet).hover(function() {
 		tweenSpanMeet.play();
 	},
@@ -21,9 +45,10 @@ $(document).ready(function($) {
 		tweenSpanMeet.reverse();
 	});
 	$(navMeet).click(function() {
-		controller.scrollTo("#meet-container");
+		controller.scrollTo(925);
 	});
 
+	// subway nav
 	$(navSubway).hover(function() {
 		tweenSpanSubway.play();
 	},
@@ -31,7 +56,40 @@ $(document).ready(function($) {
 		tweenSpanSubway.reverse();
 	});
 	$(navSubway).click(function() {
-		controller.scrollTo(6499);
+		controller.scrollTo(1390);
+	});
+
+	// tweet one nav
+	$(navTweet1).hover(function() {
+		tweenSpanTweet1.play();
+	},
+	function() {
+		tweenSpanTweet1.reverse();
+	});
+	$(navTweet1).click(function() {
+		controller.scrollTo(2450);
+	});
+
+	// craft nav
+	$(navCraft).hover(function() {
+		tweenSpanCraft.play();
+	},
+	function() {
+		tweenSpanCraft.reverse();
+	});
+	$(navCraft).click(function() {
+		controller.scrollTo(2711);
+	});
+
+	// tweet two nav
+	$(navTweet2).hover(function() {
+		tweenSpanTweet2.play();
+	},
+	function() {
+		tweenSpanTweet2.reverse();
+	});
+	$(navTweet2).click(function() {
+		controller.scrollTo(4000);
 	});
 
 
