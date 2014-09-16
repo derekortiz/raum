@@ -4,7 +4,7 @@
 - Second growth slide same height as Kevin image? 
 - kevin text slide slides out off to the right, if possible. 
 - Fix fill in letters: M/A, IE missalign
-- Navigation buttons on the side 
+- Navigation buttons color shift
 - Optimize Images
 
 For later:
