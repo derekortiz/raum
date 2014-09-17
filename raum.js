@@ -137,6 +137,7 @@ $(document).ready(function($) {
 		.add([TweenMax.to("#subway p", 1, {fontSize: "120px"}),
 			  TweenMax.to("#subway p", 1, {letterSpacing: "-18px"}),
 			  TweenMax.to("#subway p", 1, {lineHeight: "87px"}),
+			  TweenMax.from("#subway p", 1, {opacity: .5}),
 			  TweenMax.from("#tweet-one div div div div", 1,{width:300})
 		])
 		.to("#subway", 1.5, {transform: "translateY(-800px)", delay:1})
@@ -170,7 +171,8 @@ $(document).ready(function($) {
 			])
 		.add([TweenMax.to("#cans p", 1, {fontSize: "120px"}),
 			  TweenMax.to("#cans p", 1, {letterSpacing: "-18px"}),
-			  TweenMax.to("#cans p", 1, {lineHeight: "87px"})
+			  TweenMax.to("#cans p", 1, {lineHeight: "87px"}),
+			  TweenMax.from("#cans p", 1, {opacity: .5})
 			])
 		.to("#cans", 1.5, {left:"100%", delay:1})
 
