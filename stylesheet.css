@@ -1,14 +1,18 @@
 @font-face {
-  font-family: DINCond;
-  src: url(fonts/FF_DIN_Condensed/FF_DIN_Condensed_Regular/FF_DIN_Condensed_Regular.otf); }
+  font-family: DIN;
+  src: url(fonts/FF_DIN_Regular/FF_DIN_Regular/FF_DIN_Regular.otf); }
 
 @font-face {
   font-family: DINCond Bold;
   src: url(fonts/FF_DIN_Condensed/FF_DIN_Condensed_Bold/FF_DIN_Condensed_Bold.otf); }
 
+@font-face {
+  font-family: DINBold;
+  src: url(fonts/FF_DIN_Bold/FF_DIN_Bold/FF_DIN_Bold.otf); }
+
 html, body {
   margin: 0px;
-  font-family: DIN,helvetica,arial,sans-serif;
+  font-family: DINBold,helvetica,arial,sans-serif;
   font-size: 0.85em;
   line-height: 1.4em;
   width: 100%;
@@ -65,7 +69,6 @@ nav {
 /*---------- class templates ---------------*/
 .white-text, #maria-container #maria p, #kevin div p {
   color: #fbfbfb;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-left: 40px; }
@@ -123,6 +126,7 @@ img#counterbanner {
 
 #tagline {
   font-weight: bold;
+  font-family: DIN;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #FCFCFC;
@@ -154,7 +158,6 @@ img#counterbanner {
   /* padding-bottom: 59%; */ }
   #owners-container .owner-text, #owners-container #text-decoration-left p, #owners-container #text-decoration-right p {
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 1px;
     font-size: 15px;
     color: #414142;
@@ -163,6 +166,7 @@ img#counterbanner {
     border-bottom: 1px solid #414142;
     position: relative;
     width: 300px;
+    height: 33px;
     float: right;
     margin-right: 70%;
     margin-top: 66px;
@@ -173,6 +177,7 @@ img#counterbanner {
     position: relative;
     border-bottom: 1px solid #414142;
     width: 300px;
+    height: 33px;
     float: left;
     margin-left: 62.5%;
     margin-top: 100px;
@@ -275,7 +280,6 @@ div#meet-container {
     text-transform: uppercase;
     color: #fbfbfb;
     line-height: 31px;
-    font-weight: bold;
     letter-spacing: 1px;
     padding: 40px 140px 40px 40px;
     font-size: 30px; }
@@ -300,11 +304,11 @@ div#meet-container {
     #maria-container #maria p#home-text {
       margin: 0;
       padding-top: 40px;
-      font-size: 54px;
+      font-size: 65px;
       width: 400px;
       line-height: 0.9; }
     #maria-container #maria p#home-sub {
-      letter-spacing: 0; }
+      letter-spacing: 1px; }
 
 /*------------ tweets ---------------*/
 #tweet-one {
@@ -393,12 +397,13 @@ div#meet-container {
 /*----------- cans  ---------------*/
 #cans {
   z-index: 25;
-  transform: translateY(800px); }
+  transform: translateY(800px);
+  height: 700px; }
 
 /*----------- kevin ---------------*/
 #kevin {
   background: url(images/kevin.jpg) no-repeat top center;
-  height: 800px;
+  height: 700px;
   width: 100%;
   overflow: hidden;
   z-index: 23;

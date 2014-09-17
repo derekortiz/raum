@@ -1,8 +1,10 @@
 $(document).ready(function($) {
-	// init controller
-	controller.scrollTo(function (pos) {
-		TweenMax.to(window, 2, {scrollTo: {y: pos}});
-	});
+	
+	// function to tween to spot in scene for click events
+	// takes position returns nothing
+	function navScroll(pos) {
+		TweenMax.to(window, 1.5, {scrollTo: {y: pos}});
+	} 
 	
 	var navHome   = $("#nav-home"),
 		navMeet   = $("#nav-meet"),
@@ -34,7 +36,7 @@ $(document).ready(function($) {
 		tweenSpanHome.reverse();
 	});
 	$(navHome).click(function() {
-		controller.scrollTo(0);
+		navScroll(0);
 	});
 
 	// meet nav
@@ -45,7 +47,7 @@ $(document).ready(function($) {
 		tweenSpanMeet.reverse();
 	});
 	$(navMeet).click(function() {
-		controller.scrollTo(925);
+		navScroll(4100);
 	});
 
 	// subway nav
@@ -56,7 +58,7 @@ $(document).ready(function($) {
 		tweenSpanSubway.reverse();
 	});
 	$(navSubway).click(function() {
-		controller.scrollTo(1390);
+		navScroll(6160);
 	});
 
 	// tweet one nav
@@ -67,7 +69,7 @@ $(document).ready(function($) {
 		tweenSpanTweet1.reverse();
 	});
 	$(navTweet1).click(function() {
-		controller.scrollTo(2450);
+		navScroll(10100);
 	});
 
 	// craft nav
@@ -78,7 +80,7 @@ $(document).ready(function($) {
 		tweenSpanCraft.reverse();
 	});
 	$(navCraft).click(function() {
-		controller.scrollTo(2711);
+		navScroll(12850);
 	});
 
 	// tweet two nav
@@ -89,7 +91,7 @@ $(document).ready(function($) {
 		tweenSpanTweet2.reverse();
 	});
 	$(navTweet2).click(function() {
-		controller.scrollTo(4000);
+		navScroll(16450);
 	});
 
 
@@ -108,7 +110,7 @@ $(document).ready(function($) {
 		.from(tagline, .6, {opacity: 0})
 
 		// owner tweens
-		.to("#owners-container", 1, {transform: "translateY(0)", delay:1})
+		.to("#owners-container", 1.5, {transform: "translateY(0)", delay:1})
 		.add([TweenMax.from("#text-decoration-left", .5,{width:0}),
 			  TweenMax.from("#text-decoration-right", .5,{width:0})
 			])
@@ -118,7 +120,7 @@ $(document).ready(function($) {
 		.set("#owners-container", {css: {zIndex: 1}, delay: 1})
 
 		// meet tweens
-		.to("#meet-container", 1, {transform: "translateY(0)"})
+		.to("#meet-container", 1.5, {transform: "translateY(0)"})
 		.add([TweenMax.from("#d1", .5, {marginLeft: "300"}),
 			  TweenMax.from("#d3", .5, {marginLeft: "300"})
 			])
@@ -129,49 +131,52 @@ $(document).ready(function($) {
 		.set("#meet-container", {css: {zIndex: 2}})
 		
 		// subway tweens paired with maria
-		.add([TweenMax.to("#subway", 1, {transform: "translateY(0)", delay:1}),
-			  TweenMax.to("#maria-container", 1, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to("#subway", 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to("#maria-container", 1.5, {transform: "translateY(0)", delay:1})
 			])
 		.add([TweenMax.to("#subway p", 1, {fontSize: "120px"}),
 			  TweenMax.to("#subway p", 1, {letterSpacing: "-18px"}),
 			  TweenMax.to("#subway p", 1, {lineHeight: "87px"}),
 			  TweenMax.from("#tweet-one div div div div", 1,{width:300})
 		])
-		.to("#subway", 1, {transform: "translateY(-800px)", delay:1})
+		.to("#subway", 1.5, {transform: "translateY(-800px)", delay:1})
 		.set("#maria-container", {css: {zIndex: 3}})
 
 		// maria tweens
 
 		// tweet one tweens
-		.to("#tweet-one", 1, {transform: "translateY(0)", delay:1})
+		.to("#tweet-one", 1.5, {transform: "translateY(0)", delay:1})
 		.from("#tweet-one div.tweet-container", .5, {marginLeft: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-one div div div.outer-tweet", .5,
 			    {width:50, height: 50},
-			    {width:300, height: 255}
+			    {width:300, height: 421}
 			 ))
 		.from("#tweet-one div div div.outer-tweet div.inner-tweet", .5, {opacity:0})
-		.from("#tweet-one div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
+		.add([TweenMax.to("#tweet-one div.tweet-container", .5, {transform: "translateY(-500px)", delay:1}),
+			  TweenMax.to("#tweet-one div.tweet-container-right", .5, {transform: "translateY(-350px)", delay:1}),
+			  TweenMax.from("#tweet-one div.tweet-container-right", 1, {marginRight: -500, ease: Back.easeOut, delay:1})
+			 ])
+		//.from("#tweet-one div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-one div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
-			    {width:300, height: 287}
+			    {width:300, height: 353}
 			 ))
 		.from("#tweet-one div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0})
 		.set("#tweet-one", {css: {zIndex: 4}})
 
 		// cans tweens
-		.add([TweenMax.to("#cans", 1, {transform: "translateY(0)", delay:1}),
-			  TweenMax.to("#kevin", 1, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to("#cans", 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to("#kevin", 1.5, {transform: "translateY(0)", delay:1})
 			])
 		.add([TweenMax.to("#cans p", 1, {fontSize: "120px"}),
 			  TweenMax.to("#cans p", 1, {letterSpacing: "-18px"}),
 			  TweenMax.to("#cans p", 1, {lineHeight: "87px"})
 			])
-		.to("#cans", 1, {transform: "translateY(-800px)", delay:1})
+		.to("#cans", 1.5, {left:"100%", delay:1})
 
 
 		// kevin tweens
 		.set("#kevin", {css: {zIndex: 6}})
-		.to("#kevin div", 1, {marginRight:"-50%", delay:.7})
 
 		//tweet two tweens
 		.to("#tweet-two", 1, {transform: "translateY(0)", delay:1})
@@ -181,7 +186,11 @@ $(document).ready(function($) {
 			    {width:300, height: 255}
 			 ))
 		.from("#tweet-two div div div.outer-tweet div.inner-tweet", .5, {opacity:0})
-		.from("#tweet-two div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
+		.add([TweenMax.to("#tweet-two div.tweet-container", .5, {transform: "translateY(-500px)", delay:1}),
+			  TweenMax.to("#tweet-two div.tweet-container-right", .5, {transform: "translateY(-350px)", delay:1}),
+			  TweenMax.from("#tweet-two div.tweet-container-right", 1, {marginRight: -500, ease: Back.easeOut, delay:1})
+			 ])
+		//.from("#tweet-two div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
 			    {width:300, height: 287}
@@ -190,7 +199,7 @@ $(document).ready(function($) {
 		
 
 	var scrollScene = new ScrollScene({
-		duration: 4000,
+		duration: 18000,
 		triggerHook: 0
 	})
 	.setTween(animationTimeline)
