@@ -11,14 +11,16 @@ $(document).ready(function($) {
 	    navSubway = $("#nav-subway"),
 	    navTweet1 = $("#nav-tweet-one"),
 	    navCraft  = $("#nav-craft"),
-	    navTweet2 = $("#nav-tweet-two");
+	    navTweet2 = $("#nav-tweet-two"),
+	    navSocial = $("#nav-social");
 
 	var navHomeSpan   = $("#nav-home span"),
 		navMeetSpan   = $("#nav-meet span"),
 	    navSubwaySpan = $("#nav-subway span")
 	    navTweet1Span = $("#nav-tweet-one span"),
 	    navCraftSpan  = $("#nav-craft span"),
-	    navTweet2Span = $("#nav-tweet-two span");
+	    navTweet2Span = $("#nav-tweet-two span"),
+	    navSocialSpan = $("#nav-social span");
 
 	// navigation tweens
 	var tweenSpanHome   = TweenMax.to(navHomeSpan, .25,{display:"block", opacity:1, paused:true}),
@@ -26,7 +28,8 @@ $(document).ready(function($) {
 	    tweenSpanSubway = TweenMax.to(navSubwaySpan, .25,{display:"block", opacity:1, paused:true}),
 	    tweenSpanTweet1 = TweenMax.to(navTweet1Span, .25,{display:"block", opacity:1, paused:true}),
 	    tweenSpanCraft  = TweenMax.to(navCraftSpan, .25,{display:"block", opacity:1, paused:true}),
-	    tweenSpanTweet2 = TweenMax.to(navTweet2Span, .25,{display:"block", opacity:1, paused:true});
+	    tweenSpanTweet2 = TweenMax.to(navTweet2Span, .25,{display:"block", opacity:1, paused:true}),
+	    tweenSpanSocial = TweenMax.to(navSocialSpan, .25,{display:"block", opacity:1, paused:true});
 
     // home nav
 	$(navHome).hover(function() {
@@ -94,6 +97,17 @@ $(document).ready(function($) {
 		navScroll(16450);
 	});
 
+	// social nav
+	$(navSocial).hover(function() {
+		tweenSpanSocial.play();
+	},
+	function() {
+		tweenSpanSocial.reverse();
+	});
+	$(navSocial).click(function() {
+		navScroll(19000);
+	});
+
 
 	var r = document.getElementById("r-counter");
 	var a = document.getElementById("a-counter");
@@ -141,12 +155,14 @@ $(document).ready(function($) {
 			  TweenMax.from("#tweet-one div div div div", 1,{width:300})
 		])
 		.to("#subway", 1.5, {transform: "translateY(-800px)", delay:1})
-		.set("#maria-container", {css: {zIndex: 3}})
 
 		// maria tweens
 
 		// tweet one tweens
-		.to("#tweet-one", 1.5, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to("#tweet-one", 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to("#maria-container",1.5, {zIndex: 25, delay: 1})
+			])
+		.set("#maria-container", {zIndex: -2, transform: "translateY(-100px)"})
 		.from("#tweet-one div.tweet-container", .5, {marginLeft: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-one div div div.outer-tweet", .5,
 			    {width:50, height: 50},
@@ -185,7 +201,7 @@ $(document).ready(function($) {
 		.from("#tweet-two div.tweet-container", .5, {marginLeft: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet", .5,
 			    {width:50, height: 50},
-			    {width:300, height: 255}
+			    {width:300, height: 440}
 			 ))
 		.from("#tweet-two div div div.outer-tweet div.inner-tweet", .5, {opacity:0})
 		.add([TweenMax.to("#tweet-two div.tweet-container", .5, {transform: "translateY(-500px)", delay:1}),
@@ -195,7 +211,7 @@ $(document).ready(function($) {
 		//.from("#tweet-two div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
-			    {width:300, height: 287}
+			    {width:300, height: 353}
 			 ))
 		.from("#tweet-two div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0});
 		
