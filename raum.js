@@ -1,10 +1,10 @@
 $(document).ready(function($) {
-	
 	// function to tween to spot in scene for click events
 	// takes position returns nothing
 	function navScroll(pos) {
 		TweenMax.to(window, 1.5, {scrollTo: {y: pos}});
-	} 
+	}
+
 	
 	var navHome   = $("#nav-home"),
 		navMeet   = $("#nav-meet"),
@@ -30,6 +30,13 @@ $(document).ready(function($) {
 	    tweenSpanCraft  = TweenMax.to(navCraftSpan, .25,{display:"block", opacity:1, paused:true}),
 	    tweenSpanTweet2 = TweenMax.to(navTweet2Span, .25,{display:"block", opacity:1, paused:true}),
 	    tweenSpanSocial = TweenMax.to(navSocialSpan, .25,{display:"block", opacity:1, paused:true});
+
+	var        navColor2 = "#7A7977",
+ 	     activeColorDark = "#605050",
+ 	    activeColorLight = "#FBFBFB",
+ 	           navColor3 = "#B9B0AB",
+ 	           navColor4 = "#ABA4A4",
+ 	           navColor5 = "#CECDCE";
 
     // home nav
 	$(navHome).hover(function() {
@@ -61,7 +68,7 @@ $(document).ready(function($) {
 		tweenSpanSubway.reverse();
 	});
 	$(navSubway).click(function() {
-		navScroll(6160);
+		navScroll(6400);
 	});
 
 	// tweet one nav
@@ -72,7 +79,7 @@ $(document).ready(function($) {
 		tweenSpanTweet1.reverse();
 	});
 	$(navTweet1).click(function() {
-		navScroll(10100);
+		navScroll(10600);
 	});
 
 	// craft nav
@@ -83,7 +90,7 @@ $(document).ready(function($) {
 		tweenSpanCraft.reverse();
 	});
 	$(navCraft).click(function() {
-		navScroll(12850);
+		navScroll(13300);
 	});
 
 	// tweet two nav
@@ -94,7 +101,7 @@ $(document).ready(function($) {
 		tweenSpanTweet2.reverse();
 	});
 	$(navTweet2).click(function() {
-		navScroll(16450);
+		navScroll(17600);
 	});
 
 	// social nav
@@ -105,7 +112,7 @@ $(document).ready(function($) {
 		tweenSpanSocial.reverse();
 	});
 	$(navSocial).click(function() {
-		navScroll(19000);
+		navScroll(21000);
 	});
 
 
@@ -114,6 +121,26 @@ $(document).ready(function($) {
 	var u = document.getElementById("u-counter");
 	var m = document.getElementById("m-counter");
 	var tagline = document.getElementById("tagline");
+
+	var ownersContainer = document.getElementById("owners-container");
+
+	var meetContainer = document.getElementById("meet-container");
+
+	var subway = document.getElementById("subway"),
+	    subwayP = $("#subway > p");
+
+	//console.log(subwayP.length);
+
+	var mariaContainer = document.getElementById("maria-container");
+
+	var tweetOne = document.getElementById("tweet-one");
+
+	var cans = document.getElementById("cans"),
+		cansP = $("#cans > p");
+
+	var kevin = document.getElementById("kevin");
+
+	var tweetTwo = document.getElementById("tweet-two");
 	var animationTimeline = new TimelineMax()
 		// logo tweens
 		.add([TweenMax.from(r, .8,{x:-200, opacity: 0}), 
@@ -124,17 +151,36 @@ $(document).ready(function($) {
 		.from(tagline, .6, {opacity: 0})
 
 		// owner tweens
-		.to("#owners-container", 1.5, {transform: "translateY(0)", delay:1})
+		.add([
+			TweenMax.to(ownersContainer, 1.5, {transform: "translateY(0)", delay:1}),
+			TweenMax.to(navHome, 2, {backgroundColor: activeColorDark, delay:1}),
+			TweenMax.to(navMeet, 2, {backgroundColor: navColor2, delay:1}),
+			TweenMax.to(navSubway, 2, {backgroundColor: navColor2, delay:1}),
+			TweenMax.to(navTweet1, 2, {backgroundColor: navColor2, delay:1}),
+			TweenMax.to(navCraft, 2, {backgroundColor: navColor2, delay:1}),
+			TweenMax.to(navTweet2, 2, {backgroundColor: navColor2, delay:1}),
+			TweenMax.to(navSocial, 2, {backgroundColor: navColor2, delay:1})
+			])
 		.add([TweenMax.from("#text-decoration-left", .5,{width:0}),
 			  TweenMax.from("#text-decoration-right", .5,{width:0})
 			])
 		.add([TweenMax.from("#text-decoration-left p", .5,{opacity:0}),
 			  TweenMax.from("#text-decoration-right p", .5,{opacity:0})
 			])
-		.set("#owners-container", {css: {zIndex: 1}, delay: 1})
+		//.set(ownersContainer, {css: {zIndex: 1}, delay: 1})
 
 		// meet tweens
-		.to("#meet-container", 1.5, {transform: "translateY(0)"})
+		.add([
+			TweenMax.to(ownersContainer,1, {zIndex: 1, delay: 1}),
+			TweenMax.to(meetContainer, 1.5, {transform: "translateY(0)", delay:1}),
+			TweenMax.to(navHome, 2, {backgroundColor: navColor3, delay:1}),
+			TweenMax.to(navMeet, 2, {backgroundColor: activeColorDark, delay:1}),
+			TweenMax.to(navSubway, 2, {backgroundColor: navColor3, delay:1}),
+			TweenMax.to(navTweet1, 2, {backgroundColor: navColor3, delay:1}),
+			TweenMax.to(navCraft, 2, {backgroundColor: navColor3, delay:1}),
+			TweenMax.to(navTweet2, 2, {backgroundColor: navColor3, delay:1}),
+			TweenMax.to(navSocial, 2, {backgroundColor: navColor3, delay:1})
+			])
 		.add([TweenMax.from("#d1", .5, {marginLeft: "300"}),
 			  TweenMax.from("#d3", .5, {marginLeft: "300"})
 			])
@@ -142,27 +188,50 @@ $(document).ready(function($) {
 			  TweenMax.from("#meet-line-right", .5, {width: 0})
 			])
 		.from("#meet-text", .5, {opacity: 0})
-		.set("#meet-container", {css: {zIndex: 2}})
+		.set(meetContainer, {css: {zIndex: 2}})
 		
 		// subway tweens paired with maria
-		.add([TweenMax.to("#subway", 1.5, {transform: "translateY(0)", delay:1}),
-			  TweenMax.to("#maria-container", 1.5, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to(subway, 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(mariaContainer, 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(navHome, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navMeet, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navSubway, 2, {backgroundColor: activeColorLight, delay:1}),
+			  TweenMax.to(navTweet1, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navCraft, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navSocial, 2, {backgroundColor: navColor4, delay:1})
 			])
-		.add([TweenMax.to("#subway p", 1, {fontSize: "120px"}),
-			  TweenMax.to("#subway p", 1, {letterSpacing: "-18px"}),
-			  TweenMax.to("#subway p", 1, {lineHeight: "87px"}),
-			  TweenMax.from("#subway p", 1, {opacity: .5}),
+		.add([TweenMax.to(subwayP, 1, {fontSize: "120px",
+						   letterSpacing: "-18px",
+						   lineHeight: "87px"
+						}),
+			  TweenMax.from(subwayP, 1, {opacity: .5}),
 			  TweenMax.from("#tweet-one div div div div", 1,{width:300})
 		])
-		.to("#subway", 1.5, {transform: "translateY(-800px)", delay:1})
+		.add([TweenMax.to(subway, 1.5, {transform: "translateY(-800px)", delay:1}),
+			  TweenMax.to(mariaContainer,1.5, {zIndex: 25, delay: 1}),
+			  TweenMax.to(navHome, 2, {backgroundColor: navColor5, delay:1}),
+			  TweenMax.to(navMeet, 2, {backgroundColor: navColor5, delay:1}),
+			  TweenMax.to(navTweet1, 2, {backgroundColor: navColor5, delay:1}),
+			  TweenMax.to(navCraft, 2, {backgroundColor: navColor5, delay:1}),
+			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor5, delay:1}),
+			  TweenMax.to(navSocial, 2, {backgroundColor: navColor5, delay:1})
+			])
 
 		// maria tweens
 
 		// tweet one tweens
-		.add([TweenMax.to("#tweet-one", 1.5, {transform: "translateY(0)", delay:1}),
-			  TweenMax.to("#maria-container",1.5, {zIndex: 25, delay: 1})
+		.add([TweenMax.to(tweetOne, 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(mariaContainer,1.5, {zIndex: 24, delay: 1}),
+			  TweenMax.to(navHome, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navMeet, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navSubway, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navTweet1, 2, {backgroundColor: activeColorLight, delay:1}),
+			  TweenMax.to(navCraft, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navSocial, 2, {backgroundColor: navColor4, delay:1})
 			])
-		.set("#maria-container", {zIndex: -2, transform: "translateY(-100px)"})
+		.set(mariaContainer, {zIndex: -2, transform: "translateY(-100px)"})
 		.from("#tweet-one div.tweet-container", .5, {marginLeft: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-one div div div.outer-tweet", .5,
 			    {width:50, height: 50},
@@ -173,31 +242,36 @@ $(document).ready(function($) {
 			  TweenMax.to("#tweet-one div.tweet-container-right", .5, {transform: "translateY(-350px)", delay:1}),
 			  TweenMax.from("#tweet-one div.tweet-container-right", 1, {marginRight: -500, ease: Back.easeOut, delay:1})
 			 ])
-		//.from("#tweet-one div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-one div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
 			    {width:300, height: 353}
 			 ))
 		.from("#tweet-one div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0})
-		.set("#tweet-one", {css: {zIndex: 4}})
+		.set(tweetOne, {css: {zIndex: 4}})
 
 		// cans tweens
-		.add([TweenMax.to("#cans", 1.5, {transform: "translateY(0)", delay:1}),
-			  TweenMax.to("#kevin", 1.5, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to(cans, 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(kevin, 1.5, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(navTweet1, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navCraft, 2, {backgroundColor: activeColorLight, delay:1})
 			])
-		.add([TweenMax.to("#cans p", 1, {fontSize: "120px"}),
-			  TweenMax.to("#cans p", 1, {letterSpacing: "-18px"}),
-			  TweenMax.to("#cans p", 1, {lineHeight: "87px"}),
-			  TweenMax.from("#cans p", 1, {opacity: .5})
+		.add([TweenMax.to(cansP, 1, {fontSize: "120px",
+									 letterSpacing: "-18px",
+									 lineHeight: "87px"
+									}),
+			  TweenMax.from(cansP, 1, {opacity: .5})
 			])
-		.to("#cans", 1.5, {left:"100%", delay:1})
+		.to(cans, 1.5, {left:"100%", delay:1})
 
 
 		// kevin tweens
-		.set("#kevin", {css: {zIndex: 6}})
+		.set(kevin, {css: {zIndex: 6}})
 
 		//tweet two tweens
-		.to("#tweet-two", 1, {transform: "translateY(0)", delay:1})
+		.add([TweenMax.to(tweetTwo, 1, {transform: "translateY(0)", delay:1}),
+			  TweenMax.to(navCraft, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navTweet2, 2, {backgroundColor: activeColorLight, delay:1})
+		])
 		.from("#tweet-two div.tweet-container", .5, {marginLeft: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet", .5,
 			    {width:50, height: 50},
@@ -208,16 +282,17 @@ $(document).ready(function($) {
 			  TweenMax.to("#tweet-two div.tweet-container-right", .5, {transform: "translateY(-350px)", delay:1}),
 			  TweenMax.from("#tweet-two div.tweet-container-right", 1, {marginRight: -500, ease: Back.easeOut, delay:1})
 			 ])
-		//.from("#tweet-two div.tweet-container-right", .5, {marginRight: -500, ease: Back.easeOut})
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
 			    {width:300, height: 353}
 			 ))
-		.from("#tweet-two div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0});
-		
+		.add([TweenMax.from("#tweet-two div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0}),
+			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor4, delay:1}),
+			  TweenMax.to(navSocial, 2, {backgroundColor: activeColorDark, delay:1})
+			])
 
 	var scrollScene = new ScrollScene({
-		duration: 18000,
+		duration: 20000,
 		triggerHook: 0
 	})
 	.setTween(animationTimeline)

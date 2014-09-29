@@ -50,6 +50,10 @@ nav {
         margin: 0;
         list-style-type: none;
 
+        li:first-child {
+            background: rgb(251,251,251);
+        }
+
         li {
             display: block;
             position:relative;
@@ -80,13 +84,13 @@ nav {
 
 #animation {
     position: relative;
+    overflow: hidden;
     top:0;
     left:0;
     z-index: 0;
     width:100%;
     height: 100%;
     padding:0;
-    margin-bottom: -250px;
 }
 
 /*---------- class templates ---------------*/
@@ -373,7 +377,7 @@ div#meet-container {
     width: 100%;
     height:800px;
     overflow: hidden;
-    z-index: 26;
+    z-index: 27;
     background: url(images/maria.jpg) no-repeat top center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -516,7 +520,7 @@ div#meet-container {
 /*----------- cans  ---------------*/
 
 #cans {
-    z-index: 25;
+    z-index: 24;
     transform: translateY(700px);
     height: 700px;
 }
@@ -567,8 +571,9 @@ div#meet-container {
 
 /*-------------- footer ---------------*/
 footer {
+    position: relative;
     width: 100%;
-    height: 400px;
+    min-height: 500px;
     overflow: hidden;
     background:#F5F0E8;
     text-align: center;
@@ -576,10 +581,11 @@ footer {
     font-size: 40px;
     text-transform: uppercase;
     color:rgb(119,106,106);
-    padding-top: 60px;
+    padding-top: 30px;
 
     h1 {
-        padding-bottom: 30px;
+        padding-bottom: 0px;
+        line-height: 1;
     }
 
     a {
@@ -593,10 +599,12 @@ footer {
     }
 
     small {
+        display: block;
         font-family: DIN;
         font-size: 20px;
         text-transform: none;
-        padding-top: 30px;
+        padding: 30px 0 40px 0;
+        line-height: 1.4;
     }
 }
 
