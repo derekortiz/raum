@@ -396,12 +396,13 @@ div#meet-container {
             font-size: 65px;
             width: 400px;
             line-height: 0.9;
-
+            letter-spacing:0;
 
         }
 
         p#home-sub{
             letter-spacing: 1px;
+            font-size: 18px;
         }
     }
 }
@@ -543,7 +544,8 @@ div#meet-container {
 
     div {
         float:right;
-        width: 50%;
+        padding-right:40px;
+        width: 46%;
         height: 100%;
 
         p {
@@ -573,7 +575,6 @@ div#meet-container {
 footer {
     position: relative;
     width: 100%;
-    min-height: 500px;
     overflow: hidden;
     background:#F5F0E8;
     text-align: center;
@@ -591,19 +592,16 @@ footer {
     a {
         display:inline-block;
         margin: 0 5px 50px 5px;
-        img {
-            background:rgb(96,80,80);
-            width: 75px;
-            height:75px;
-        }
+        background:rgb(96,80,80);
+        padding: 7.5px;
     }
 
     small {
         display: block;
         font-family: DIN;
-        font-size: 20px;
+        font-size: 17px;
         text-transform: none;
-        padding: 30px 0 40px 0;
+        padding: 30px 0 50px 0;
         line-height: 1.4;
     }
 }
