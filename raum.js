@@ -284,7 +284,7 @@ $(document).ready(function($) {
 			 ])
 		.add(TweenMax.fromTo("#tweet-two div div div.outer-tweet-right", .5,
 			    {width:50, height: 50},
-			    {width:300, height: 353}
+			    {width:300, height: 385}
 			 ))
 		.add([TweenMax.from("#tweet-two div div div.outer-tweet-right div.inner-tweet-right", .5, {opacity:0}),
 			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor4, delay:1}),
