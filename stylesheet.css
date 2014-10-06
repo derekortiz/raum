@@ -10,6 +10,17 @@
   font-family: DINBold;
   src: url(fonts/FF_DIN_Bold/FF_DIN_Bold/FF_DIN_Bold.otf); }
 
+.group:before,
+.group:after {
+  content: "";
+  display: table; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  zoom: 1; }
+
 html, body {
   margin: 0px;
   font-family: DINBold,helvetica,arial,sans-serif;
@@ -338,17 +349,29 @@ div#meet-container {
 #bird-call-4 {
   width: 270px; }
 
+#bird-call-0 {
+  height: 391px; }
+
 #bird-call-1 {
-  height: 386px; }
+  height: 336px; }
 
 #bird-call-2 {
-  height: 321px; }
-
-#bird-call-3 {
   height: 407px; }
 
-#bird-call-4 {
+#bird-call-3 {
   height: 353px; }
+
+#moreq {
+  height: 423px; }
+
+#morea {
+  height: 368px; }
+
+#rentq {
+  height: 439px; }
+
+#renta {
+  height: 385px; }
 
 .bird-section {
   height: 700px;
@@ -415,6 +438,7 @@ div#meet-container {
         border-color: transparent transparent #605050; }
       .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right {
         float: right;
+        overflow: hidden;
         min-height: 50px;
         width: 300px;
         background-color: #605050;
@@ -422,9 +446,9 @@ div#meet-container {
         padding: 0;
         text-align: center; }
         .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right {
+          margin: 15px;
           width: 270px;
-          text-align: left;
-          margin: 15px; }
+          text-align: left; }
 
 /*----------- cans  ---------------*/
 #cans {
@@ -491,5 +515,5 @@ footer {
     font-family: DIN;
     font-size: 17px;
     text-transform: none;
-    padding: 0px 0 50px 0;
+    padding: 30px 0 50px 0;
     line-height: 1.4; }
