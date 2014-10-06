@@ -415,8 +415,27 @@ div#meet-container {
     z-index: 22;
 }
 
+#bird-call-1,
+#bird-call-2,
+#bird-call-3,
+#bird-call-4 {
+    width: 270px;
+}
 
-.twitter-section {
+#bird-call-1 {
+    height: 386px;
+}
+#bird-call-2 {
+    height: 321px;
+}
+#bird-call-3 {
+    height: 407px;
+}
+#bird-call-4 {
+    height: 353px;
+}
+
+.bird-section {
     height: 700px;
     width: 100%;
     background-color: rgb(119,106,106);
@@ -551,7 +570,7 @@ div#meet-container {
         p {
             @extend .white-text;
             float: left;
-            width:80%;
+            width:75%;
             margin: 10% 0 0 17%;
             max-width: 500px;
             padding:0;

@@ -332,7 +332,25 @@ div#meet-container {
 #tweet-two {
   z-index: 22; }
 
-.twitter-section {
+#bird-call-1,
+#bird-call-2,
+#bird-call-3,
+#bird-call-4 {
+  width: 270px; }
+
+#bird-call-1 {
+  height: 386px; }
+
+#bird-call-2 {
+  height: 321px; }
+
+#bird-call-3 {
+  height: 407px; }
+
+#bird-call-4 {
+  height: 353px; }
+
+.bird-section {
   height: 700px;
   width: 100%;
   background-color: #776a6a;
@@ -340,17 +358,17 @@ div#meet-container {
   position: absolute;
   transform: translateY(100%);
   overflow: hidden; }
-  .twitter-section .tweet-container {
+  .bird-section .tweet-container {
     width: 90%;
     height: 300px;
     float: left;
     margin: 100px 0 0 100px; }
-    .twitter-section .tweet-container img {
+    .bird-section .tweet-container img {
       float: left; }
-    .twitter-section .tweet-container .tweet-box-container {
+    .bird-section .tweet-container .tweet-box-container {
       float: left;
       height: 100%; }
-      .twitter-section .tweet-container .tweet-box-container .tail {
+      .bird-section .tweet-container .tweet-box-container .tail {
         float: left;
         width: 0;
         height: 0;
@@ -358,7 +376,7 @@ div#meet-container {
         border-style: solid;
         border-width: 0 0 15px 22px;
         border-color: transparent transparent #605050; }
-      .twitter-section .tweet-container .tweet-box-container .outer-tweet {
+      .bird-section .tweet-container .tweet-box-container .outer-tweet {
         float: left;
         overflow: hidden;
         min-height: 50px;
@@ -367,15 +385,15 @@ div#meet-container {
         background-color: #605050;
         margin-top: -22px;
         text-align: center; }
-        .twitter-section .tweet-container .tweet-box-container .outer-tweet .inner-tweet {
+        .bird-section .tweet-container .tweet-box-container .outer-tweet .inner-tweet {
           width: 270px;
           text-align: left;
           margin: 15px; }
-  .twitter-section .tweet-container-right {
+  .bird-section .tweet-container-right {
     width: 90%;
     float: right;
     margin: 50px 100px 0; }
-    .twitter-section .tweet-container-right img {
+    .bird-section .tweet-container-right img {
       float: right;
       /*--- flip image ---*/
       -moz-transform: scaleX(-1);
@@ -384,10 +402,10 @@ div#meet-container {
       transform: scaleX(-1);
       filter: FlipH;
       -ms-filter: "FlipH"; }
-    .twitter-section .tweet-container-right .tweet-box-container-right {
+    .bird-section .tweet-container-right .tweet-box-container-right {
       float: right;
       height: 100%; }
-      .twitter-section .tweet-container-right .tweet-box-container-right .tail-right {
+      .bird-section .tweet-container-right .tweet-box-container-right .tail-right {
         float: right;
         width: 0;
         height: 0;
@@ -395,7 +413,7 @@ div#meet-container {
         border-style: solid;
         border-width: 0 22px 15px 0;
         border-color: transparent transparent #605050; }
-      .twitter-section .tweet-container-right .tweet-box-container-right .outer-tweet-right {
+      .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right {
         float: right;
         min-height: 50px;
         width: 300px;
@@ -403,7 +421,7 @@ div#meet-container {
         margin-top: -22px;
         padding: 0;
         text-align: center; }
-        .twitter-section .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right {
+        .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right {
           width: 270px;
           text-align: left;
           margin: 15px; }
@@ -435,7 +453,7 @@ div#meet-container {
     height: 100%; }
     #kevin div p {
       float: left;
-      width: 80%;
+      width: 75%;
       margin: 10% 0 0 17%;
       max-width: 500px;
       padding: 0; }
@@ -460,6 +478,7 @@ footer {
   color: #776a6a;
   padding-top: 30px; }
   footer h1 {
+    font-weight: 500;
     padding-bottom: 0px;
     line-height: 1; }
   footer a {
@@ -472,5 +491,5 @@ footer {
     font-family: DIN;
     font-size: 17px;
     text-transform: none;
-    padding: 30px 0 50px 0;
+    padding: 0px 0 50px 0;
     line-height: 1.4; }
