@@ -415,7 +415,10 @@ div#meet-container {
         height:100%;
         width:100%;
         p {
-            @extend .white-text;
+            color: #605050;
+            opacity: .8;
+            text-transform: uppercase;
+            padding-left: 40px;
         }
 
         p#home-text{
@@ -442,6 +445,7 @@ div#meet-container {
     transform: translateY(800px);
 }
 #tweet-two {
+    height: 800px;
     z-index: 22;
 }
 
@@ -590,14 +594,14 @@ div#meet-container {
     -webkit-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
-    height: 700px;
+    height: 800px;
 }
 
 /*----------- kevin ---------------*/
 
 #kevin {
     background: url(images/kevin.jpg) no-repeat top center;
-    height:700px;
+    height:800px;
     width:100%;
     overflow:hidden;
     z-index: 23;
@@ -620,22 +624,21 @@ div#meet-container {
         p {
             @extend .white-text;
             float: left;
-            width:75%;
-            margin: 10% 0 0 17%;
+            width:70%;
+            margin: 10% 0 0 13%;
             max-width: 500px;
             padding:0;
         }
 
         p#kevin-text{
-            font-size: 70px;
+            font-size: 73px;
             line-height: 0.9;
-
         }
 
         p#kevin-sub{
             font-size: 18px; 
             letter-spacing: 0;
-            margin: 5% 0 0 17%;
+            margin: 5% 0 0 14%;
         }
     }
 }

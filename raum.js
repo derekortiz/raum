@@ -266,12 +266,13 @@ $(document).ready(function($) {
 			])
 		.to(cans, 1.5, {left:"100%", delay:1})
 
+		// TODO: add timeline pause for keving
 
-		// kevin tweens
-		.set(kevin, {css: {zIndex: 6}})
-
+		// kevin tweens with tweet two so that z-index change kicks in while tweet two is
+		// still mid transition giving a very smooth appearance
 		//tweet two tweens
-		.add([TweenMax.to(tweetTwo, 1, {transform: "translateY(0)", delay:1}),
+		.add([TweenMax.to(kevin, 2, {zIndex: -1, delay:1}),
+		      TweenMax.to(tweetTwo, 1, {transform: "translateY(0)", delay:1}),
 			  TweenMax.to(navCraft, 2, {backgroundColor: navColor4, delay:1}),
 			  TweenMax.to(navTweet2, 2, {backgroundColor: activeColorLight, delay:1})
 		])

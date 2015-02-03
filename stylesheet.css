@@ -1,12 +1,15 @@
 @font-face {
   font-family: DIN;
   src: url(fonts/FF_DIN_Regular/FF_DIN_Regular/FF_DIN_Regular.otf); }
+
 @font-face {
   font-family: DINCond Bold;
   src: url(fonts/FF_DIN_Condensed/FF_DIN_Condensed_Bold/FF_DIN_Condensed_Bold.otf); }
+
 @font-face {
   font-family: DINBold;
   src: url(fonts/FF_DIN_Bold/FF_DIN_Bold/FF_DIN_Bold.otf); }
+
 .group:before,
 .group:after {
   content: "";
@@ -87,7 +90,7 @@ nav {
   padding: 0; }
 
 /*---------- class templates ---------------*/
-.white-text, #maria-container #maria p, #kevin div p {
+.white-text, #kevin div p {
   color: #fbfbfb;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -329,6 +332,11 @@ div#meet-container {
   #maria-container #maria {
     height: 100%;
     width: 100%; }
+    #maria-container #maria p {
+      color: #605050;
+      opacity: .8;
+      text-transform: uppercase;
+      padding-left: 40px; }
     #maria-container #maria p#home-text {
       margin: 0;
       padding-top: 40px;
@@ -348,6 +356,7 @@ div#meet-container {
   transform: translateY(800px); }
 
 #tweet-two {
+  height: 800px;
   z-index: 22; }
 
 #bird-call-1,
@@ -465,12 +474,12 @@ div#meet-container {
   -webkit-transform: translateY(700px);
   -ms-transform: translateY(700px);
   transform: translateY(700px);
-  height: 700px; }
+  height: 800px; }
 
 /*----------- kevin ---------------*/
 #kevin {
   background: url(images/kevin.jpg) no-repeat top center;
-  height: 700px;
+  height: 800px;
   width: 100%;
   overflow: hidden;
   z-index: 23;
@@ -490,17 +499,17 @@ div#meet-container {
     height: 100%; }
     #kevin div p {
       float: left;
-      width: 75%;
-      margin: 10% 0 0 17%;
+      width: 70%;
+      margin: 10% 0 0 13%;
       max-width: 500px;
       padding: 0; }
     #kevin div p#kevin-text {
-      font-size: 70px;
+      font-size: 73px;
       line-height: 0.9; }
     #kevin div p#kevin-sub {
       font-size: 18px;
       letter-spacing: 0;
-      margin: 5% 0 0 17%; }
+      margin: 5% 0 0 14%; }
 
 /*-------------- footer ---------------*/
 footer {
@@ -530,5 +539,3 @@ footer {
     text-transform: none;
     padding: 30px 0 50px 0;
     line-height: 1.4; }
-
-/*# sourceMappingURL=stylesheet.css.map */
