@@ -26,7 +26,7 @@
 		var destroyMe = function (me) {
 			me.remove();
 			me = null;
-		}
+		};
 
 		return this.each(function () {
 			var mainAni = new TimelineLite({delay: options.delay});
@@ -55,7 +55,7 @@
 								{x: flyX, y: flyY - jump},
 								{x: flyX * (Math.random() + 1), y: (flyY) + (radius * options.gravity)}
 							]
-					}
+					};
 				var ani = new TimelineLite({delay: options.duration/options.amount*i,onComplete: destroyMe, onCompleteParams: [$spark]})
 					.add([
 						TweenMax.to($spark, 0.0001, {autoAlpha: 1}),
@@ -63,7 +63,7 @@
 						TweenMax.to($spark, options.lifetime*0.3, {scale: options.scaleEnd}),
 						TweenMax.to($spark, options.lifetime*0.5, {autoAlpha: 0, delay: options.lifetime*0.5, ease: Power1.easeOut})
 					]);
-				mainAni.add(ani, 0)
+				mainAni.add(ani, 0);
 			}
 		});
 	};
@@ -80,7 +80,7 @@
 		if ($elem.length > 0) {
 			e.preventDefault();
 			if (Modernizr.touch && myScroll) { // mobile
-				myScroll.scrollTo(0, -$elem.offset().top-myScroll.y, 1000, IScroll.utils.ease.quadratic)
+				myScroll.scrollTo(0, -$elem.offset().top-myScroll.y, 1000, IScroll.utils.ease.quadratic);
 				// TweenMax.to(myScroll, 1, {y: -$elem.offset().top-$(".scrollContent").offset().top});
 			} else {
 				TweenMax.to(window, 1, {scrollTo: {y: $elem.offset().top}});
@@ -91,4 +91,29 @@
 			}
 		}
 	});
+
+	// turn over to the dark side
+	if (window.location.hostname === "janpaepke.github.io") {
+		$(document).ready (function () {
+			google_ad_client = "ca-pub-8286077135621931";
+			google_ad_slot = "4607084004";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			var text = $("<div>")
+				.addClass("content")
+				.append("<h3>Support ScrollMagic</h3>")
+				.append("<p>Maintaning and updating ScrollMagic takes up a lot of my time. To be able to provide the project with the attention it deserves, I decided to experiment with including ads (feedback & evaluation pending).</p>")
+				.append("<p>If the plugin saved you some time or helped you to create something awesome, please consider making use of the donate button above. Alternatively you can have a closer look at the ad below, because every click and every donation helps me spend more time on ScrollMagic and you contribute to making it a little better each time.</p>")
+				.append("<p>Thank you!</p>");
+			var container = $("<div>")
+				.addClass("darkside")
+				.append(text)
+				.append('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>')
+				.append('<ins class="adsbygoogle" style="display:block;width:' + google_ad_width + 'px;height:' + google_ad_height + 'px;margin: 20px auto 0 auto;" data-ad-client="' + google_ad_client + '" data-ad-slot="' + google_ad_slot + '"></ins>');
+		
+			$("section#info > div.content").first().after(container);
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		});
+	}
+
 }(jQuery));
