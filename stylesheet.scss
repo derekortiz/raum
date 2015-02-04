@@ -19,6 +19,14 @@ $offsetX: 30em;
   box-sizing: border-box;
 }
 
+@mixin transition($val) {
+    -webkit-transition-delay: 0s;
+    -webkit-transition: $val;
+       -moz-transition: $val;
+         -o-transition: $val;
+            transition: $val;
+}
+
 .group:before,
 .group:after {
     content: "";
@@ -367,14 +375,22 @@ div#meet-container {
 /*------------ subway/cana text banners ---------------*/
 
 #subway {
+    p {
+        line-height: 100px;
+        letter-spacing: 16px;
+        font-size: 120px;
+        @media(max-width:922px) {
+            font-size: 100px;
+        }
+    }
 }
 
 .text-banner {
     top:0;
     position:absolute;
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
+    -webkit-transform: translateY(660px);
+    -ms-transform: translateY(660px);
+    transform: translateY(660px);
     height: 660px;
     width: 100%;
     background-color: rgb(96,80,80);
@@ -384,12 +400,13 @@ div#meet-container {
 
     p {
         display: table-cell;
+        overflow: hidden;
         vertical-align: middle;
         text-transform: uppercase;
         color: rgb(251,251,251);
         line-height: 31px;
         letter-spacing: 1px;
-        padding: 40px 140px 40px 40px;
+        padding: 40px 60px 40px 40px;
         font-size:30px;
     }
 }

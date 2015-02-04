@@ -209,9 +209,9 @@ $(document).ready(function($) {
 			  TweenMax.to(navTweet2, 2, {backgroundColor: navColor4, delay:1}),
 			  TweenMax.to(navSocial, 2, {backgroundColor: navColor4, delay:1})
 			])
-		.add([TweenMax.to(subwayP, 1, {fontSize: "120px",
-						   letterSpacing: "-18px",
-						   lineHeight: "87px"
+		.add([TweenMax.to(subwayP, 1, {
+						   letterSpacing: "-24px",
+						   lineHeight: "78px"
 						}),
 			  TweenMax.from(subwayP, 1, {opacity: .5}),
 			  TweenMax.from("#tweet-one div div div div", 1,{width:300})
