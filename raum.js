@@ -10,7 +10,7 @@ $(document).ready(function($) {
 	// function to tween to spot in scene for click events
 	// takes position returns nothing
 	function navScroll(pos) {
-		TweenMax.to(window, 1.5, {scrollTo: {y: pos}});
+		TweenMax.to(window, 1.25, {scrollTo: {y: pos, autoKill: false}});
 	}
 
 	
