@@ -258,9 +258,9 @@ $(document).ready(function($) {
 			  TweenMax.to(navTweet1, 2, {backgroundColor: navColor4, delay:1}),
 			  TweenMax.to(navCraft, 2, {backgroundColor: activeColorLight, delay:1})
 			])
-		.add([TweenMax.to(cansP, 1, {fontSize: "120px",
-									 letterSpacing: "-18px",
-									 lineHeight: "87px"
+		.add([TweenMax.to(cansP, 1, {
+									 letterSpacing: "-24px",
+									 lineHeight: "78px"
 									}),
 			  TweenMax.from(cansP, 1, {opacity: .5})
 			])

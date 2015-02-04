@@ -375,14 +375,6 @@ div#meet-container {
 /*------------ subway/cana text banners ---------------*/
 
 #subway {
-    p {
-        line-height: 100px;
-        letter-spacing: 16px;
-        font-size: 120px;
-        @media(max-width:922px) {
-            font-size: 100px;
-        }
-    }
 }
 
 .text-banner {
@@ -404,10 +396,15 @@ div#meet-container {
         vertical-align: middle;
         text-transform: uppercase;
         color: rgb(251,251,251);
-        line-height: 31px;
-        letter-spacing: 1px;
-        padding: 40px 60px 40px 40px;
-        font-size:30px;
+        padding: 20px 60px 40px 40px;
+        line-height: 100px;
+        letter-spacing: 16px;
+        font-size: 120px;
+        @media(max-width:922px) {
+            font-size: 100px;
+            letter-spacing: 10px;
+            line-height: 90px;
+        }
     }
 }
 

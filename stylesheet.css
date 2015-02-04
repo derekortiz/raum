@@ -291,14 +291,6 @@ div#meet-container {
     margin-left: 387px; }
 
 /*------------ subway/cana text banners ---------------*/
-#subway p {
-  line-height: 100px;
-  letter-spacing: 16px;
-  font-size: 120px; }
-  @media (max-width: 922px) {
-    #subway p {
-      font-size: 100px; } }
-
 .text-banner {
   top: 0;
   position: absolute;
@@ -317,10 +309,15 @@ div#meet-container {
     vertical-align: middle;
     text-transform: uppercase;
     color: #fbfbfb;
-    line-height: 31px;
-    letter-spacing: 1px;
-    padding: 40px 60px 40px 40px;
-    font-size: 30px; }
+    padding: 20px 60px 40px 40px;
+    line-height: 100px;
+    letter-spacing: 16px;
+    font-size: 120px; }
+    @media (max-width: 922px) {
+      .text-banner p {
+        font-size: 100px;
+        letter-spacing: 10px;
+        line-height: 90px; } }
 
 /*------------ Maria ----------------*/
 #maria-container {
