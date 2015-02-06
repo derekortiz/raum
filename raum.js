@@ -169,6 +169,8 @@ $(document).ready(function($) {
 			TweenMax.to(navTweet2, 2, {backgroundColor: navColor2, delay:1}),
 			TweenMax.to(navSocial, 2, {backgroundColor: navColor2, delay:1})
 			])
+		// bring logo to back
+		.set("#logo-container", {css: {zIndex: 0}})
 		.add([TweenMax.from("#text-decoration-left", .5,{width:0}),
 			  TweenMax.from("#text-decoration-right", .5,{width:0})
 			])

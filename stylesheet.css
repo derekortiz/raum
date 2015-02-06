@@ -104,7 +104,7 @@ nav {
   height: 700px;
   width: 100%;
   background: #605050;
-  z-index: 0; }
+  z-index: 29; }
 
 .raum-animation {
   background: #605050;
@@ -297,7 +297,8 @@ div#meet-container {
   -webkit-transform: translateY(660px);
   -ms-transform: translateY(660px);
   transform: translateY(660px);
-  height: 660px;
+  max-height: 800px;
+  height: 100%;
   width: 100%;
   background-color: #605050;
   display: table;
@@ -479,13 +480,12 @@ div#meet-container {
   z-index: 24;
   -webkit-transform: translateY(700px);
   -ms-transform: translateY(700px);
-  transform: translateY(700px);
-  height: 800px; }
+  transform: translateY(700px); }
 
 /*----------- kevin ---------------*/
 #kevin {
-  background: url(images/kevin.jpg) no-repeat top center;
-  height: 800px;
+  background: url(images/kevin.jpg) no-repeat 0 -30px;
+  height: 830px;
   width: 100%;
   overflow: hidden;
   z-index: 23;
