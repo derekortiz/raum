@@ -300,3 +300,46 @@ $(document).ready(function($) {
 	.setPin("#animation", {spacerClass:".animation-pin-spacer",
 		pushFollowers: true});
 });
+
+/*-----------------------------------------------------------
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    Code for Iframe bug.
+    was hearing that the twitter stylesheet was failing to load
+    at times causing the body of the iframe to be display: none
+    and show a white block. 
+
+    Algorithm: every 2 seconds for 10 seconds check the iframes
+    check that all iframe bodies have a display value other than
+    none. If none re-link the stylesheet, else ignore the iframe.
+    If all 4 iframes were present during the check stop checking.
+    Otherwise keep checking every 2 seconds until the
+    timeout clears. At this point chances are there was another
+    issue.
+
+    This algorithm exploits a the resulting css values when
+    encountering the failed load. 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ -------------------------------------------------------------*/
+var checkIframeStyles = function() { 
+  var $iframes = $("iframe.twitter-tweet");
+  console.log($iframes);
+  $iframes.each(function() {
+    var $this = $(this);
+    var $iframeHead = $this.contents().find('head');
+    var $iframeBody = $this.contents().find('body');
+    var stylesheetString = '<link type="text/css" rel="stylesheet" href="https://platform.twitter.com/embed/timeline.3fb0c4c981cd3f8f8dfb6b0ab93d6a9e.default.css"/>';
+
+    if($iframeBody.css('display') == 'none' ) {
+      console.log('found',$this.attr('id'), $iframeBody.css('display'));
+      $iframeHead.append(stylesheetString);
+    }
+    else {
+      console.log('ignored, ',$this.attr('id'),$iframeBody.css('display'));
+    }
+  });
+  if($iframes.length == 4){
+    clearInterval(iframeCheck);
+  }
+}
+var iframeCheck = setInterval(checkIframeStyles, 2000);
+setTimeout(function(){ clearInterval(iframeCheck) }, 10000);
