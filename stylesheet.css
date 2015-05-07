@@ -1,15 +1,46 @@
 @font-face {
   font-family: DIN;
   src: url(fonts/FF_DIN_Regular/FF_DIN_Regular/FF_DIN_Regular.otf); }
-
 @font-face {
   font-family: DINCond Bold;
   src: url(fonts/FF_DIN_Condensed/FF_DIN_Condensed_Bold/FF_DIN_Condensed_Bold.otf); }
-
 @font-face {
   font-family: DINBold;
   src: url(fonts/FF_DIN_Bold/FF_DIN_Bold/FF_DIN_Bold.otf); }
-
+@-webkit-keyframes loadingX {
+  0% {
+    left: 0; }
+  50% {
+    width: 37.5px;
+    height: 37.5px; }
+  100% {
+    left: 112.5px; } }
+@keyframes loadingX {
+  0% {
+    left: 0; }
+  50% {
+    width: 37.5px;
+    height: 37.5px; }
+  100% {
+    left: 112.5px; } }
+@-webkit-keyframes loadingY {
+  0% {
+    top: 50%; }
+  25% {
+    top: 25%; }
+  75% {
+    top: 75%; }
+  100% {
+    top: 50%; } }
+@keyframes loadingY {
+  0% {
+    top: 50%; }
+  25% {
+    top: 25%; }
+  75% {
+    top: 75%; }
+  100% {
+    top: 50%; } }
 .group:before,
 .group:after {
   content: "";
@@ -44,6 +75,42 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+#loader-curtain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: #605050; }
+
+.loader {
+  margin: -125px 0 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 125px;
+  height: 125px;
+  color: #FCFCFC;
+  text-align: center;
+  font-family: DINCond Bold;
+  font-size: 25px; }
+  .loader:before {
+    content: "Loading..."; }
+  .loader .wrap {
+    position: absolute;
+    -webkit-animation: loadingY 2s ease-in infinite;
+    animation: loadingY 2s ease-in-out infinite; }
+    .loader .wrap .ball {
+      width: 18.75px;
+      height: 18.75px;
+      position: absolute;
+      background: #FCFCFC;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%;
+      -webkit-animation: loadingX 2s linear infinite alternate;
+      animation: loadingX 2s linear infinite alternate; }
 
 nav {
   position: fixed;
@@ -105,6 +172,18 @@ nav {
   width: 100%;
   background: #605050;
   z-index: 29; }
+
+#helper {
+  font-weight: bold;
+  font-family: DIN;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FCFCFC;
+  font-size: 1.3em;
+  margin-top: 1em;
+  display: none; }
+  #helper #helper-arrow {
+    margin-top: 5px; }
 
 .raum-animation {
   background: #605050;
@@ -366,35 +445,17 @@ div#meet-container {
   height: 800px;
   z-index: 22; }
 
-#bird-call-1,
-#bird-call-2,
-#bird-call-3,
-#bird-call-4 {
-  width: 270px; }
-
-#bird-call-0 {
-  height: 391px; }
-
-#bird-call-1 {
-  height: 336px; }
-
-#bird-call-2 {
-  height: 407px; }
-
-#bird-call-3 {
-  height: 353px; }
-
 #moreq {
-  height: 423px; }
+  height: 397px; }
 
 #morea {
-  height: 368px; }
+  height: 330px; }
 
 #rentq {
-  height: 439px; }
+  height: 380px; }
 
 #renta {
-  height: 385px; }
+  height: 330px; }
 
 .bird-section {
   height: 700px;
@@ -425,6 +486,10 @@ div#meet-container {
         border-width: 0 0 15px 22px;
         border-color: transparent transparent #605050; }
       .bird-section .tweet-container .tweet-box-container .outer-tweet {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 15px;
         float: left;
         overflow: hidden;
         min-height: 50px;
@@ -433,10 +498,9 @@ div#meet-container {
         background-color: #605050;
         margin-top: -22px;
         text-align: center; }
-        .bird-section .tweet-container .tweet-box-container .outer-tweet .inner-tweet {
+        .bird-section .tweet-container .tweet-box-container .outer-tweet .inner-tweet, .bird-section .tweet-container .tweet-box-container .outer-tweet .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right, .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right .tweet-container .tweet-box-container .outer-tweet .inner-tweet-right {
           width: 270px;
-          text-align: left;
-          margin: 15px; }
+          text-align: left; }
   .bird-section .tweet-container-right {
     width: 90%;
     float: right;
@@ -462,18 +526,17 @@ div#meet-container {
         border-width: 0 22px 15px 0;
         border-color: transparent transparent #605050; }
       .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
         float: right;
         overflow: hidden;
         min-height: 50px;
         width: 300px;
         background-color: #605050;
         margin-top: -22px;
-        padding: 0;
+        padding: 15px;
         text-align: center; }
-        .bird-section .tweet-container-right .tweet-box-container-right .outer-tweet-right .inner-tweet-right {
-          margin: 15px;
-          width: 270px;
-          text-align: left; }
 
 /*----------- cans  ---------------*/
 #cans {
@@ -528,7 +591,8 @@ footer {
   font-size: 40px;
   text-transform: uppercase;
   color: #776a6a;
-  padding-top: 30px; }
+  padding-top: 30px;
+  margin-top: -250px; }
   footer h1 {
     font-weight: 500;
     padding-bottom: 0px;
@@ -545,3 +609,5 @@ footer {
     text-transform: none;
     padding: 30px 0 50px 0;
     line-height: 1.4; }
+
+/*# sourceMappingURL=stylesheet.css.map */
